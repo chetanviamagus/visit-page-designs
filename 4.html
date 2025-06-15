@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Selected Visit | Greenheck Customer Visit Planner</title>
+    <meta
+      name="description"
+      content="Selected visit details for Greenheck Customer Visit Planner."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/base.css" />
+  </head>
+  <body>
+    <header class="gh-header">
+      <div class="gh-header-left">
+        <img src="Greenheck_Logo_Horiz_Blue@2x.png" alt="Greenheck Logo" class="gh-logo" />
+      </div>
+      <div class="gh-header-right">
+        <span class="gh-header-title">Customer Visit Planner</span>
+        <div class="gh-user-info">
+          <span class="material-icons" aria-hidden="true">person_outline</span>
+          <span>Welcome, Gary</span>
+        </div>
+      </div>
+    </header>
+    <main class="gh-main gh-main-table">
+      <h1 class="gh-main-section-title">Selected Visit</h1>
+      <p class="gh-main-desc">You may proceed to enter customer details or reserve and</p>
+      <div class="gh-table-container">
+        <table class="gh-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Visit Duration</th>
+              <th>
+                Number of Groups
+                <span
+                  class="material-icons gh-info-icon"
+                  title="Number of groups that can be accommodated"
+                  >info</span
+                >
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>07/21/2025</strong></td>
+              <td>Schofield, WI</td>
+              <td><strong>Monday Arrival; Wednesday Departure</strong></td>
+              <td>1 group</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="gh-action-buttons">
+        <button class="gh-btn gh-btn-outline gh-btn-large" id="reserve-later">
+          Reserve &amp; Complete Later
+        </button>
+        <button class="gh-btn gh-btn-table gh-btn-large" id="reserve-account">
+          Reserve &amp; Select Customer Account
+        </button>
+      </div>
+      <div class="gh-back-link">
+        <a href="#" id="back-link">&lt; Back</a>
+      </div>
+    </main>
+    <footer class="gh-footer">
+      <div class="gh-footer-logo">
+        <img
+          src="Greenheck_Logo_Horiz_Blue@2x.png"
+          alt="Greenheck Logo"
+          class="gh-footer-logo-img"
+        />
+      </div>
+      <div class="gh-footer-address">
+        &copy; <span id="year"></span> Greenheck Fan Corporation. All rights reserved. P.O. BOX 410
+        | Schofield, WI 54476 | <a href="tel:+17153596171">(715) 359-6171</a>
+      </div>
+    </footer>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

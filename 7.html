@@ -39,9 +39,9 @@
           <li class="gh-step">Summary</li>
         </ul>
       </nav>
-      <section class="gh-form-section">
+      <section class="gh-form-section" style="max-width: 500px; margin: 0 auto;">
         <h2 class="gh-form-title">Rep Attendee(s)</h2>
-        <label class="gh-label">Add Rep Attendee(s)</label>
+        <label class="gh-label" for="rep-attendee-names-select">Add Rep Attendee(s)</label>
         <div
           class="gh-custom-select"
           id="rep-attendee-names-select"
@@ -67,28 +67,28 @@
                 <span class="gh-option-bold">Fischbach, Gary</span>
               </label>
             </li>
-            <li class="gh-select-option" role="option" data-value="emily">
+            <li class="gh-select-option" role="option" data-value="terry">
               <label class="gh-checkbox-label">
                 <input type="checkbox" class="gh-checkbox" tabindex="-1" />
-                <span class="gh-option-bold">Compaan, Emily</span>
+                <span class="gh-option-bold">Johnson, Terry</span>
               </label>
             </li>
-            <li class="gh-select-option" role="option" data-value="craig">
+            <li class="gh-select-option" role="option" data-value="dyson">
               <label class="gh-checkbox-label">
                 <input type="checkbox" class="gh-checkbox" tabindex="-1" />
-                <span class="gh-option-bold">Gebel, Craig</span>
-              </label>
-            </li>
-            <li class="gh-select-option" role="option" data-value="kyle">
-              <label class="gh-checkbox-label">
-                <input type="checkbox" class="gh-checkbox" tabindex="-1" />
-                <span class="gh-option-bold">Lakanen, Kyle</span>
+                <span class="gh-option-bold">James, Dyson</span>
               </label>
             </li>
           </ul>
         </div>
+        <div class="gh-selected-attendees" style="margin-top: 2rem; margin-bottom: 2rem;">
+          <div class="gh-selected-label" style="font-weight: 500; margin-bottom: 0.5rem;">Selected Rep Attendee(s)</div>
+          <div class="gh-selected-list" id="selected-rep-list">
+            <!-- Selected attendees will be rendered here by JS -->
+          </div>
+        </div>
       </section>
-      <div class="gh-action-buttons">
+      <div class="gh-action-buttons" style="justify-content: center; gap: 1.5rem;">
         <button class="gh-btn gh-btn-outline gh-btn-large" id="save-later">
           Save &amp; Complete Later
         </button>
@@ -96,7 +96,7 @@
           Save &amp; Add Travel Info
         </button>
       </div>
-      <div class="gh-back-link">
+      <div class="gh-back-link" style="text-align: center; margin-top: 2rem;">
         <a href="#" id="back-link">&lt; Back</a>
       </div>
     </main>
@@ -114,5 +114,100 @@
       </div>
     </footer>
     <script src="scripts/main.js"></script>
+    <script>
+      // Rep Attendee selection dynamic rendering with details form
+      document.addEventListener('DOMContentLoaded', function () {
+        const selectBox = document.getElementById('rep-attendee-names-select');
+        const options = selectBox.querySelectorAll('.gh-checkbox');
+        const selectedList = document.getElementById('selected-rep-list');
+        const optionLabels = {
+          none: 'NONE - No rep(s) attending',
+          gary: 'Fischbach, Gary',
+          terry: 'Johnson, Terry',
+          dyson: 'James, Dyson',
+        };
+        let expandedIndex = null;
+        function renderSelected() {
+          const checked = Array.from(options).filter(cb => cb.checked);
+          selectedList.innerHTML = '';
+          if (checked.length === 0) return;
+          checked.forEach((cb, idx) => {
+            const value = cb.closest('.gh-select-option').getAttribute('data-value');
+            if (value === 'none') {
+              const div = document.createElement('div');
+              div.textContent = optionLabels[value];
+              selectedList.appendChild(div);
+            } else {
+              const div = document.createElement('div');
+              div.style.marginBottom = '1.5rem';
+              div.innerHTML = `
+                <span class=\"gh-selected-attendee-name\">${optionLabels[value]}</span><br />
+                <a href=\"#\" class=\"gh-add-details-link\" data-index=\"${idx}\" style=\"color: #0074c2; text-decoration: underline; font-size: 0.97em; display: inline-flex; align-items: center; gap: 0.2em;\">
+                  <span class=\"material-icons\" style=\"font-size: 1em; vertical-align: middle;\">${expandedIndex === idx ? 'remove' : 'add'}</span>
+                  ${expandedIndex === idx ? 'Hide Details' : 'Add Details (Optional)'}
+                </a>
+                ${expandedIndex === idx ? `
+                <form class='gh-attendee-details-form' autocomplete='off' style='margin-top: 1.2rem;'>
+                  <div style='margin-bottom: 0.7rem;'>
+                    <label style='display: flex; align-items: center; gap: 0.5em; font-size: 1em;'><input type='checkbox' class='gh-attendee-details-main-contact' /> Designate as main visit contact</label>
+                  </div>
+                  <label class='gh-attendee-details-label'>Mobile Phone Number</label>
+                  <input type='text' class='gh-input gh-attendee-details-input' style='width: 100%; margin-bottom: 1rem;' />
+                  <label class='gh-attendee-details-label'>* Name on Badge (How Attendee name will appear on badge)</label>
+                  <input type='text' class='gh-input gh-attendee-details-input' style='width: 100%; margin-bottom: 1rem;' />
+                  <label class='gh-attendee-details-label'>Dietary Restrictions/Special Requirements <span class='gh-attendee-details-char-count' id='diet-count-${idx}'>0/1200</span></label>
+                  <textarea class='gh-textarea gh-attendee-details-textarea' rows='2' maxlength='1200' style='width: 100%; margin-bottom: 1rem;' data-count-id='diet-count-${idx}'></textarea>
+                  <label class='gh-attendee-details-label'>Comments <span class='gh-attendee-details-char-count' id='comments-count-${idx}'>0/1200</span></label>
+                  <textarea class='gh-textarea gh-attendee-details-textarea' rows='2' maxlength='1200' style='width: 100%; margin-bottom: 1rem;' data-count-id='comments-count-${idx}' placeholder='e.g. I\\'m interested in...'></textarea>
+                  <div style='display: flex; align-items: flex-end; gap: 1.5rem; margin-bottom: 0.7rem;'>
+                    <div>
+                      <label class='gh-attendee-details-label'>Prayer Time?</label><br />
+                      <label style='margin-right: 1em;'><input type='radio' name='prayer-time-${idx}' value='yes' class='gh-attendee-details-radio' /> Yes</label>
+                      <label><input type='radio' name='prayer-time-${idx}' value='no' class='gh-attendee-details-radio' /> No</label>
+                    </div>
+                    <div style='flex: 1;'>
+                      <label class='gh-attendee-details-label'>Enter prayer time</label>
+                      <input type='text' class='gh-input gh-attendee-details-input' style='width: 100%;' />
+                    </div>
+                  </div>
+                </form>
+                ` : ''}
+              `;
+              selectedList.appendChild(div);
+            }
+          });
+          // Add click listeners for add-details links
+          selectedList.querySelectorAll('.gh-add-details-link').forEach(link => {
+            link.onclick = function(e) {
+              e.preventDefault();
+              expandedIndex = parseInt(this.getAttribute('data-index'));
+              renderSelected();
+              addDetailsCharCountListeners(expandedIndex);
+            };
+          });
+        }
+        function addDetailsCharCountListeners(idx) {
+          // Add char count for textareas
+          const form = selectedList.querySelector('.gh-attendee-details-form');
+          if (!form) return;
+          form.querySelectorAll('.gh-attendee-details-textarea').forEach(textarea => {
+            const countId = textarea.getAttribute('data-count-id');
+            const countSpan = document.getElementById(countId);
+            textarea.addEventListener('input', function() {
+              countSpan.textContent = `${this.value.length}/1200`;
+            });
+            // Initialize count
+            countSpan.textContent = `${textarea.value.length}/1200`;
+          });
+        }
+        options.forEach(cb => {
+          cb.addEventListener('change', function() {
+            expandedIndex = null;
+            renderSelected();
+          });
+        });
+        renderSelected();
+      });
+    </script>
   </body>
 </html>

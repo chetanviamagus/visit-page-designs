@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Travel Information | Greenheck Customer Visit Planner</title>
+    <meta name="description" content="Enter travel information for attendees." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/base.css" />
+  </head>
+  <body>
+    <header class="gh-header">
+      <div class="gh-header-left">
+        <img src="Greenheck_Logo_Horiz_Blue@2x.png" alt="Greenheck Logo" class="gh-logo" />
+      </div>
+      <div class="gh-header-right">
+        <span class="gh-header-title">Customer Visit Planner</span>
+        <div class="gh-user-info">
+          <span class="material-icons" aria-hidden="true">person_outline</span>
+          <span>Welcome, Gary</span>
+        </div>
+      </div>
+    </header>
+    <main class="gh-main gh-main-form">
+      <h1 class="gh-main-section-title">Travel Information</h1>
+      <nav class="gh-stepper" aria-label="Reservation steps">
+        <ul>
+          <li class="gh-step gh-step-completed">Customer account</li>
+          <li class="gh-step gh-step-completed">Attendees</li>
+          <li class="gh-step gh-step-completed">Rep Attendees</li>
+          <li class="gh-step gh-step-active">Travel Info</li>
+          <li class="gh-step">Summary</li>
+        </ul>
+      </nav>
+      <section class="gh-form-section" style="max-width: 1100px; margin: 0 auto;">
+        <h2 class="gh-form-title" style="text-align:left;">Add attendee travel information</h2>
+        <div style="margin-bottom: 1.5rem;">
+          <label class="gh-label" style="font-weight: 500;">Enter travel information for:</label>
+          <div id="attendee-radio-group" style="display: flex; flex-wrap: wrap; gap: 2.5rem; margin-top: 0.5rem;">
+            <label><input type="radio" name="attendee" value="emma_callaghan" checked /> Callaghan, Emma</label>
+            <label><input type="radio" name="attendee" value="emily_compaan" /> Compaan, Emily</label>
+            <label><input type="radio" name="attendee" value="gary_fischbach" /> Fischbach, Gary</label>
+            <label><input type="radio" name="attendee" value="craig_gebel" /> Gebel, Craig</label>
+            <label><input type="radio" name="attendee" value="kyle_lakanen" /> Lakanen, Kyle</label>
+            <label><input type="radio" name="attendee" value="mike_lind" /> Lind, Mike</label>
+            <label><input type="radio" name="attendee" value="logan_markuson" /> Markuson, Logan</label>
+            <label><input type="radio" name="attendee" value="clay_smithers" /> Smithers, Clay</label>
+          </div>
+        </div>
+        <form class="gh-travel-form" autocomplete="off" style="display: flex; gap: 3rem; flex-wrap: wrap;">
+          <!-- Left Column -->
+          <div style="flex: 1 1 350px; min-width: 320px;">
+            <h3 style="margin-bottom: 1.2rem;">Attendee Name</h3>
+            <label class="gh-label">Attendee First Name</label>
+            <input type="text" id="attendee-first-name" class="gh-input" value="Emma" style="width: 100%; margin-bottom: 1rem;" />
+            <label class="gh-label">Attendee Last Name</label>
+            <input type="text" id="attendee-last-name" class="gh-input" value="Callaghan" style="width: 100%; margin-bottom: 2rem;" />
+
+            <h3 style="margin-bottom: 1.2rem;">Hotel</h3>
+            <label class="gh-label">Confirmation Number (Hotel)</label>
+            <input type="text" class="gh-input" style="width: 100%; margin-bottom: 1rem;" />
+            <div style="display: flex; gap: 1rem;">
+              <div style="flex: 1;">
+                <label class="gh-label">Hotel Check In (mm/dd/yy)</label>
+                <input type="text" class="gh-input" style="width: 100%; margin-bottom: 1rem;" />
+              </div>
+              <div style="flex: 1;">
+                <label class="gh-label">Hotel Check Out (mm/dd/yy)</label>
+                <input type="text" class="gh-input" style="width: 100%; margin-bottom: 1rem;" />
+              </div>
+            </div>
+
+            <h3 style="margin-bottom: 1.2rem;">Driving</h3>
+            <label class="gh-label">Are you arriving by car?</label>
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 0.5rem;">
+              <label style="margin-right: 1em;"><input type="radio" name="driving" value="yes" /> Yes</label>
+              <label><input type="radio" name="driving" value="no" /> No</label>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+              <div style="flex: 1;">
+                <label class="gh-label">Driving Arrival Date</label>
+                <input type="text" class="gh-input" style="width: 100%; margin-bottom: 1rem;" />
+              </div>
+              <div style="flex: 1;">
+                <label class="gh-label">Driving Arrival Time</label>
+                <input type="text" class="gh-input" style="width: 100%; margin-bottom: 1rem;" />
+              </div>
+            </div>
+          </div>
+          <!-- Right Column -->
+          <div style="flex: 1 1 350px; min-width: 320px;">
+            <h3 style="margin-bottom: 1.2rem;">Flight</h3>
+            <label class="gh-label">Arrival Airport</label>
+            <input type="text" class="gh-input" style="width: 100%; margin-bottom: 1rem;" />
+            <label class="gh-label">Arrival Airline</label>
+            <input type="text" class="gh-input" style="width: 100%; margin-bottom: 1rem;" />
+            <div style="display: flex; gap: 1rem;">
+              <div style="flex: 1;">
+                <label class="gh-label">Arrival Flight #</label>
+                <input type="text" class="gh-input" style="width: 100%; margin-bottom: 1rem;" />
+              </div>
+              <div style="flex: 1;">
+                <label class="gh-label">Arrival Time</label>
+                <input type="text" class="gh-input" style="width: 100%; margin-bottom: 1rem;" />
+              </div>
+            </div>
+            <label class="gh-label">Departure Airport</label>
+            <input type="text" class="gh-input" style="width: 100%; margin-bottom: 1rem;" />
+            <label class="gh-label">Departure Airline</label>
+            <input type="text" class="gh-input" style="width: 100%; margin-bottom: 1rem;" />
+            <div style="display: flex; gap: 1rem;">
+              <div style="flex: 1;">
+                <label class="gh-label">Departure Flight #</label>
+                <input type="text" class="gh-input" style="width: 100%; margin-bottom: 1rem;" />
+              </div>
+              <div style="flex: 1;">
+                <label class="gh-label">Departure Time</label>
+                <input type="text" class="gh-input" style="width: 100%; margin-bottom: 1rem;" />
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+      <div class="gh-action-buttons" style="justify-content: center; gap: 1.5rem; margin-top: 2.5rem;">
+        <button class="gh-btn gh-btn-table gh-btn-large" id="save-next-traveller">Save &amp; Continue to Next Traveller</button>
+      </div>
+      <div class="gh-action-buttons" style="justify-content: center; gap: 1.5rem; margin-top: 1.5rem;">
+        <button class="gh-btn gh-btn-outline gh-btn-large" id="save-later">Save &amp; Complete Later</button>
+        <button class="gh-btn gh-btn-outline gh-btn-large" id="save-review-summary">Save &amp; Review Reservation Summary</button>
+      </div>
+      <div class="gh-back-link" style="text-align: center; margin-top: 2rem;">
+        <a href="#" id="back-link">&lt; Back</a>
+      </div>
+    </main>
+    <footer class="gh-footer">
+      <div class="gh-footer-logo">
+        <img src="Greenheck_Logo_Horiz_Blue@2x.png" alt="Greenheck Logo" class="gh-footer-logo-img" />
+      </div>
+      <div class="gh-footer-address">
+        &copy; <span id="year"></span> Greenheck Fan Corporation. All rights reserved. P.O. BOX 410 | Schofield, WI 54476 | <a href="tel:+17153596171">(715) 359-6171</a>
+      </div>
+    </footer>
+    <script src="scripts/main.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();
+      // Dynamic attendee name update
+      const attendeeMap = {
+        emma_callaghan: { first: 'Emma', last: 'Callaghan' },
+        emily_compaan: { first: 'Emily', last: 'Compaan' },
+        gary_fischbach: { first: 'Gary', last: 'Fischbach' },
+        craig_gebel: { first: 'Craig', last: 'Gebel' },
+        kyle_lakanen: { first: 'Kyle', last: 'Lakanen' },
+        mike_lind: { first: 'Mike', last: 'Lind' },
+        logan_markuson: { first: 'Logan', last: 'Markuson' },
+        clay_smithers: { first: 'Clay', last: 'Smithers' },
+      };
+      document.querySelectorAll('input[name="attendee"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+          const val = this.value;
+          document.getElementById('attendee-first-name').value = attendeeMap[val].first;
+          document.getElementById('attendee-last-name').value = attendeeMap[val].last;
+        });
+      });
+    </script>
+  </body>
+</html> 

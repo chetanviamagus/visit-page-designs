@@ -356,3 +356,17 @@ if (projectFocus && focusCount) {
     focusCount.textContent = `${projectFocus.value.length}/250`;
   });
 }
+
+const saveAddTravelBtn = document.getElementById('save-add-travel');
+if (saveAddTravelBtn) {
+  saveAddTravelBtn.addEventListener('click', function () {
+    window.location.href = '8.html';
+  });
+}
+
+const saveReviewSummaryBtn = document.getElementById('save-review-summary');
+if (saveReviewSummaryBtn) {
+  saveReviewSummaryBtn.addEventListener('click', function () {
+    window.location.href = '9.html';
+  });
+}

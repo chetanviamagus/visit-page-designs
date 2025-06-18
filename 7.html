@@ -5,26 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Rep Attendees | Greenheck Customer Visit Planner</title>
-    <meta name="description" content="Add rep attendees for your Greenheck customer visit." />
+    <meta
+      name="description"
+      content="Add rep attendees for your Greenheck customer visit."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/base.css" />
   </head>
   <body>
     <header class="gh-header">
-      <div class="gh-header-left">
-        <img src="Greenheck_Logo_Horiz_Blue@2x.png" alt="Greenheck Logo" class="gh-logo" />
-      </div>
-      <div class="gh-header-right">
-        <span class="gh-header-title">Customer Visit Planner</span>
-        <div class="gh-user-info">
-          <span class="material-icons" aria-hidden="true">person_outline</span>
-          <span>Welcome, Gary</span>
+      <div class="gh-header-container">
+        <div class="gh-header-left">
+          <img
+            src="Greenheck_Logo_Horiz_Blue@2x.png"
+            alt="Greenheck Logo"
+            class="gh-logo"
+          />
+        </div>
+        <div class="gh-header-right">
+          <div class="gh-user-info">
+            <span class="material-icons" aria-hidden="true"
+              >person_outline</span
+            >
+            <span>Welcome, Gary</span>
+          </div>
+          <span class="gh-header-title">Customer Visit Planner</span>
         </div>
       </div>
     </header>
@@ -39,9 +53,11 @@
           <li class="gh-step">Summary</li>
         </ul>
       </nav>
-      <section class="gh-form-section" style="max-width: 500px; margin: 0 auto;">
+      <section class="gh-form-section" style="max-width: 500px; margin: 0 auto">
         <h2 class="gh-form-title">Rep Attendee(s)</h2>
-        <label class="gh-label" for="rep-attendee-names-select">Add Rep Attendee(s)</label>
+        <label class="gh-label" for="rep-attendee-names-select"
+          >Add Rep Attendee(s)</label
+        >
         <div
           class="gh-custom-select"
           id="rep-attendee-names-select"
@@ -50,14 +66,22 @@
           aria-expanded="false"
           data-multiselect="true"
         >
-          <button class="gh-select-trigger" aria-label="Select attendee name(s)" type="button">
+          <button
+            class="gh-select-trigger"
+            aria-label="Select attendee name(s)"
+            type="button"
+          >
             <span class="gh-select-value">Select attendee name(s)</span>
             <span class="material-icons">expand_more</span>
           </button>
           <ul class="gh-select-options" role="listbox" hidden>
             <li class="gh-select-option" role="option" data-value="none">
               <label class="gh-checkbox-label">
-                <input type="checkbox" class="gh-checkbox gh-rep-none" tabindex="-1" />
+                <input
+                  type="checkbox"
+                  class="gh-checkbox gh-rep-none"
+                  tabindex="-1"
+                />
                 <span class="gh-option-bold">NONE - No rep(s) attending</span>
               </label>
             </li>
@@ -81,14 +105,25 @@
             </li>
           </ul>
         </div>
-        <div class="gh-selected-attendees" style="margin-top: 2rem; margin-bottom: 2rem;">
-          <div class="gh-selected-label" style="font-weight: 500; margin-bottom: 0.5rem;">Selected Rep Attendee(s)</div>
+        <div
+          class="gh-selected-attendees"
+          style="margin-top: 2rem; margin-bottom: 2rem"
+        >
+          <div
+            class="gh-selected-label"
+            style="font-weight: 500; margin-bottom: 0.5rem"
+          >
+            Selected Rep Attendee(s)
+          </div>
           <div class="gh-selected-list" id="selected-rep-list">
             <!-- Selected attendees will be rendered here by JS -->
           </div>
         </div>
       </section>
-      <div class="gh-action-buttons" style="justify-content: center; gap: 1.5rem;">
+      <div
+        class="gh-action-buttons"
+        style="justify-content: center; gap: 1.5rem"
+      >
         <button class="gh-btn gh-btn-outline gh-btn-large" id="save-later">
           Save &amp; Complete Later
         </button>
@@ -96,7 +131,7 @@
           Save &amp; Add Travel Info
         </button>
       </div>
-      <div class="gh-back-link" style="text-align: center; margin-top: 2rem;">
+      <div class="gh-back-link" style="text-align: center; margin-top: 2rem">
         <a href="#" id="back-link">&lt; Back</a>
       </div>
     </main>
@@ -109,8 +144,9 @@
         />
       </div>
       <div class="gh-footer-address">
-        &copy; <span id="year"></span> Greenheck Fan Corporation. All rights reserved. P.O. BOX 410
-        | Schofield, WI 54476 | <a href="tel:+17153596171">(715) 359-6171</a>
+        &copy; <span id="year"></span> Greenheck Fan Corporation. All rights
+        reserved. P.O. BOX 410 | Schofield, WI 54476 |
+        <a href="tel:+17153596171">(715) 359-6171</a>
       </div>
     </footer>
     <script src="scripts/main.js"></script>
@@ -128,11 +164,13 @@
         };
         let expandedIndex = null;
         function renderSelected() {
-          const checked = Array.from(options).filter(cb => cb.checked);
+          const checked = Array.from(options).filter((cb) => cb.checked);
           selectedList.innerHTML = '';
           if (checked.length === 0) return;
           checked.forEach((cb, idx) => {
-            const value = cb.closest('.gh-select-option').getAttribute('data-value');
+            const value = cb
+              .closest('.gh-select-option')
+              .getAttribute('data-value');
             if (value === 'none') {
               const div = document.createElement('div');
               div.textContent = optionLabels[value];
@@ -141,12 +179,22 @@
               const div = document.createElement('div');
               div.style.marginBottom = '1.5rem';
               div.innerHTML = `
-                <span class=\"gh-selected-attendee-name\">${optionLabels[value]}</span><br />
+                <span class=\"gh-selected-attendee-name\">${
+                  optionLabels[value]
+                }</span><br />
                 <a href=\"#\" class=\"gh-add-details-link\" data-index=\"${idx}\" style=\"color: #0074c2; text-decoration: underline; font-size: 0.97em; display: inline-flex; align-items: center; gap: 0.2em;\">
-                  <span class=\"material-icons\" style=\"font-size: 1em; vertical-align: middle;\">${expandedIndex === idx ? 'remove' : 'add'}</span>
-                  ${expandedIndex === idx ? 'Hide Details' : 'Add Details (Optional)'}
+                  <span class=\"material-icons\" style=\"font-size: 1em; vertical-align: middle;\">${
+                    expandedIndex === idx ? 'remove' : 'add'
+                  }</span>
+                  ${
+                    expandedIndex === idx
+                      ? 'Hide Details'
+                      : 'Add Details (Optional)'
+                  }
                 </a>
-                ${expandedIndex === idx ? `
+                ${
+                  expandedIndex === idx
+                    ? `
                 <form class='gh-attendee-details-form' autocomplete='off' style='margin-top: 1.2rem;'>
                   <div style='margin-bottom: 0.7rem;'>
                     <label style='display: flex; align-items: center; gap: 0.5em; font-size: 1em;'><input type='checkbox' class='gh-attendee-details-main-contact' /> Designate as main visit contact</label>
@@ -171,37 +219,43 @@
                     </div>
                   </div>
                 </form>
-                ` : ''}
+                `
+                    : ''
+                }
               `;
               selectedList.appendChild(div);
             }
           });
           // Add click listeners for add-details links
-          selectedList.querySelectorAll('.gh-add-details-link').forEach(link => {
-            link.onclick = function(e) {
-              e.preventDefault();
-              expandedIndex = parseInt(this.getAttribute('data-index'));
-              renderSelected();
-              addDetailsCharCountListeners(expandedIndex);
-            };
-          });
+          selectedList
+            .querySelectorAll('.gh-add-details-link')
+            .forEach((link) => {
+              link.onclick = function (e) {
+                e.preventDefault();
+                expandedIndex = parseInt(this.getAttribute('data-index'));
+                renderSelected();
+                addDetailsCharCountListeners(expandedIndex);
+              };
+            });
         }
         function addDetailsCharCountListeners(idx) {
           // Add char count for textareas
           const form = selectedList.querySelector('.gh-attendee-details-form');
           if (!form) return;
-          form.querySelectorAll('.gh-attendee-details-textarea').forEach(textarea => {
-            const countId = textarea.getAttribute('data-count-id');
-            const countSpan = document.getElementById(countId);
-            textarea.addEventListener('input', function() {
-              countSpan.textContent = `${this.value.length}/1200`;
+          form
+            .querySelectorAll('.gh-attendee-details-textarea')
+            .forEach((textarea) => {
+              const countId = textarea.getAttribute('data-count-id');
+              const countSpan = document.getElementById(countId);
+              textarea.addEventListener('input', function () {
+                countSpan.textContent = `${this.value.length}/1200`;
+              });
+              // Initialize count
+              countSpan.textContent = `${textarea.value.length}/1200`;
             });
-            // Initialize count
-            countSpan.textContent = `${textarea.value.length}/1200`;
-          });
         }
-        options.forEach(cb => {
-          cb.addEventListener('change', function() {
+        options.forEach((cb) => {
+          cb.addEventListener('change', function () {
             expandedIndex = null;
             renderSelected();
           });

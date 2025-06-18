@@ -5,26 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Customer Account | Greenheck Customer Visit Planner</title>
-    <meta name="description" content="Select or create a customer account for your visit." />
+    <meta
+      name="description"
+      content="Select or create a customer account for your visit."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/base.css" />
   </head>
   <body>
     <header class="gh-header">
-      <div class="gh-header-left">
-        <img src="Greenheck_Logo_Horiz_Blue@2x.png" alt="Greenheck Logo" class="gh-logo" />
-      </div>
-      <div class="gh-header-right">
-        <span class="gh-header-title">Customer Visit Planner</span>
-        <div class="gh-user-info">
-          <span class="material-icons" aria-hidden="true">person_outline</span>
-          <span>Welcome, Gary</span>
+      <div class="gh-header-container">
+        <div class="gh-header-left">
+          <img
+            src="Greenheck_Logo_Horiz_Blue@2x.png"
+            alt="Greenheck Logo"
+            class="gh-logo"
+          />
+        </div>
+        <div class="gh-header-right">
+          <div class="gh-user-info">
+            <span class="material-icons" aria-hidden="true"
+              >person_outline</span
+            >
+            <span>Welcome, Gary</span>
+          </div>
+          <span class="gh-header-title">Customer Visit Planner</span>
         </div>
       </div>
     </header>
@@ -42,8 +56,17 @@
       <section class="gh-form-section">
         <h2 class="gh-form-title">Select Customer Account</h2>
         <label class="gh-label">Select customer account</label>
-        <div class="gh-custom-select" tabindex="0" aria-haspopup="listbox" aria-expanded="false">
-          <button class="gh-select-trigger" aria-label="Select customer account" type="button">
+        <div
+          class="gh-custom-select"
+          tabindex="0"
+          aria-haspopup="listbox"
+          aria-expanded="false"
+        >
+          <button
+            class="gh-select-trigger"
+            aria-label="Select customer account"
+            type="button"
+          >
             <span class="gh-select-value">Select</span>
             <span class="material-icons">expand_more</span>
           </button>
@@ -65,7 +88,9 @@
               <span class="gh-option-normal"> Minneapolis, MN</span>
             </li>
             <li class="gh-select-option" role="option" data-value="steiner">
-              <span class="gh-option-bold">Steiner Plumbing Electric &amp; Heating</span>
+              <span class="gh-option-bold"
+                >Steiner Plumbing Electric &amp; Heating</span
+              >
               <span class="gh-option-normal"> - Minneapolis, MN</span>
             </li>
           </ul>
@@ -77,15 +102,32 @@
           role="button"
           aria-expanded="false"
         >
-          <span class="material-icons gh-toggle-icon" aria-hidden="true">add</span>
-          <span class="gh-additional-info-label">Additional account information</span>
+          <span class="material-icons gh-toggle-icon" aria-hidden="true"
+            >add</span
+          >
+          <span class="gh-additional-info-label"
+            >Additional account information</span
+          >
         </div>
-        <div class="gh-additional-info-fields" id="additional-info-fields" hidden>
+        <div
+          class="gh-additional-info-fields"
+          id="additional-info-fields"
+          hidden
+        >
           <div class="gh-additional-info-fields-container">
-            <label for="year-established" class="gh-label">Year Established</label>
-            <input type="text" id="year-established" class="gh-input" placeholder="" />
+            <label for="year-established" class="gh-label"
+              >Year Established</label
+            >
+            <input
+              type="text"
+              id="year-established"
+              class="gh-input"
+              placeholder=""
+            />
 
-            <label for="additional-locations" class="gh-label">Additional Location(s)</label>
+            <label for="additional-locations" class="gh-label"
+              >Additional Location(s)</label
+            >
             <textarea
               id="additional-locations"
               class="gh-textarea"
@@ -111,7 +153,11 @@
               aria-haspopup="listbox"
               aria-expanded="false"
             >
-              <button class="gh-select-trigger" aria-label="Select areas of interest" type="button">
+              <button
+                class="gh-select-trigger"
+                aria-label="Select areas of interest"
+                type="button"
+              >
                 <span class="gh-select-value">Select</span>
                 <span class="material-icons">expand_more</span>
               </button>
@@ -119,13 +165,25 @@
                 <li class="gh-select-option" role="option" data-value="hvac">
                   <span class="gh-option-bold">HVAC</span>
                 </li>
-                <li class="gh-select-option" role="option" data-value="plumbing">
+                <li
+                  class="gh-select-option"
+                  role="option"
+                  data-value="plumbing"
+                >
                   <span class="gh-option-bold">Plumbing</span>
                 </li>
-                <li class="gh-select-option" role="option" data-value="electrical">
+                <li
+                  class="gh-select-option"
+                  role="option"
+                  data-value="electrical"
+                >
                   <span class="gh-option-bold">Electrical</span>
                 </li>
-                <li class="gh-select-option" role="option" data-value="controls">
+                <li
+                  class="gh-select-option"
+                  role="option"
+                  data-value="controls"
+                >
                   <span class="gh-option-bold">Controls</span>
                 </li>
               </ul>
@@ -136,7 +194,9 @@
           <strong>Not finding the account you're looking for?</strong>
         </div>
         <div class="gh-create-account">
-          <span class="material-icons gh-create-icon" aria-hidden="true">person_add_alt</span>
+          <span class="material-icons gh-create-icon" aria-hidden="true"
+            >person_add_alt</span
+          >
           <a href="#" id="create-account-link">Create a customer account</a>
         </div>
       </section>
@@ -161,8 +221,9 @@
         />
       </div>
       <div class="gh-footer-address">
-        &copy; <span id="year"></span> Greenheck Fan Corporation. All rights reserved. P.O. BOX 410
-        | Schofield, WI 54476 | <a href="tel:+17153596171">(715) 359-6171</a>
+        &copy; <span id="year"></span> Greenheck Fan Corporation. All rights
+        reserved. P.O. BOX 410 | Schofield, WI 54476 |
+        <a href="tel:+17153596171">(715) 359-6171</a>
       </div>
     </footer>
     <script src="scripts/main.js"></script>

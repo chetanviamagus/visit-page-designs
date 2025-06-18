@@ -5,30 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Reservation Summary | Greenheck Customer Visit Planner</title>
-    <meta name="description" content="Reservation summary for Greenheck Customer Visit Planner." />
+    <meta
+      name="description"
+      content="Reservation summary for Greenheck Customer Visit Planner."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/base.css" />
   </head>
   <body>
     <header class="gh-header">
-      <div class="gh-header-left">
-        <img src="Greenheck_Logo_Horiz_Blue@2x.png" alt="Greenheck Logo" class="gh-logo" />
-      </div>
-      <div class="gh-header-right">
-        <span class="gh-header-title">Customer Visit Planner</span>
-        <div class="gh-user-info">
-          <span class="material-icons" aria-hidden="true">person_outline</span>
-          <span>Welcome, Gary</span>
+      <div class="gh-header-container">
+        <div class="gh-header-left">
+          <img
+            src="Greenheck_Logo_Horiz_Blue@2x.png"
+            alt="Greenheck Logo"
+            class="gh-logo"
+          />
+        </div>
+        <div class="gh-header-right">
+          <div class="gh-user-info">
+            <span class="material-icons" aria-hidden="true"
+              >person_outline</span
+            >
+            <span>Welcome, Gary</span>
+          </div>
+          <span class="gh-header-title">Customer Visit Planner</span>
         </div>
       </div>
     </header>
     <main class="gh-main gh-main-form">
       <h1 class="gh-main-section-title">Reservation Summary</h1>
-      <div style="text-align: right; margin-bottom: 1.5rem;">
-        <button class="gh-btn gh-btn-outline" onclick="window.location.href='index.html'">Return to Main Planner Start Page</button>
+      <div style="text-align: right; margin-bottom: 1.5rem">
+        <button
+          class="gh-btn gh-btn-outline"
+          onclick="window.location.href='index.html'"
+        >
+          Return to Main Planner Start Page
+        </button>
       </div>
       <nav class="gh-stepper" aria-label="Reservation steps">
         <ul>
@@ -39,9 +61,12 @@
           <li class="gh-step gh-step-active">Summary</li>
         </ul>
       </nav>
-      <section class="gh-form-section" style="max-width: 1200px; margin: 0 auto;">
-        <h2 class="gh-form-title" style="text-align:left;">Visit Summary:</h2>
-        <table class="gh-table" style="margin-bottom: 0.5rem;">
+      <section
+        class="gh-form-section"
+        style="max-width: 1200px; margin: 0 auto"
+      >
+        <h2 class="gh-form-title" style="text-align: left">Visit Summary:</h2>
+        <table class="gh-table" style="margin-bottom: 0.5rem">
           <thead>
             <tr>
               <th>Date</th>
@@ -59,95 +84,330 @@
             </tr>
           </tbody>
         </table>
-        <div style="margin-bottom: 1.5rem;">
-          Need to modify your customer visit date? Contact <a href="mailto:customervisit@greenheck.com">customervisit@greenheck.com</a>
+        <div style="margin-bottom: 1.5rem">
+          Need to modify your customer visit date? Contact
+          <a href="mailto:customervisit@greenheck.com"
+            >customervisit@greenheck.com</a
+          >
         </div>
-        <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 2.5rem;">
+        <div
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+          "
+        >
           <div><strong>Representative:</strong><br />Fischbach, Gary</div>
           <div><strong>Office:</strong><br />TMS JOHNSON INC 1344</div>
-          <div><strong>Area Sales Manager:</strong><br />Eric Tufo - North Central</div>
+          <div>
+            <strong>Area Sales Manager:</strong><br />Eric Tufo - North Central
+          </div>
           <div><strong>Rep Attendees:</strong><br />—</div>
         </div>
-        <h2 class="gh-form-title" style="text-align:left;">Companies:</h2>
-        <div style="text-align: right; margin-bottom: 0.5rem;"><a href="#" style="color: #005691; text-decoration: underline; font-weight: 500;">Add a Company</a></div>
-        <table class="gh-table" style="margin-bottom: 2.5rem;">
+        <h2 class="gh-form-title" style="text-align: left">Companies:</h2>
+        <div style="text-align: right; margin-bottom: 0.5rem">
+          <a
+            href="#"
+            style="color: #005691; text-decoration: underline; font-weight: 500"
+            >Add a Company</a
+          >
+        </div>
+        <table class="gh-table" style="margin-bottom: 2.5rem">
           <thead>
             <tr>
               <th>Company Name</th>
-              <th style="width: 120px;">Action</th>
+              <th style="width: 120px">Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Michaud Cooley Erickson</td><td><a href="#" class="edit-company-link">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>Legend Mechanical</td><td><a href="#" class="edit-company-link">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>185 Group</td><td><a href="#" class="edit-company-link">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>Michaud Copley & Erickson Engineering Solutions</td><td><a href="#" class="edit-company-link">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>AKF Group</td><td><a href="#" class="edit-company-link">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>IMS Johnson</td><td><a href="#" class="edit-company-link">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>Absolute Mechanical</td><td><a href="#" class="edit-company-link">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>galas O'Brien</td><td><a href="#" class="edit-company-link">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>Schadegg Mechanical</td><td><a href="#" class="edit-company-link">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>Northland Mechanical</td><td><a href="#" class="edit-company-link">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>Sten Engineering</td><td><a href="#" class="edit-company-link">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>Steiner Plumbing Electric & Heating</td><td><a href="#" class="edit-company-link">Edit</a> <a href="#">Remove</a></td></tr>
+            <tr>
+              <td>Michaud Cooley Erickson</td>
+              <td>
+                <a href="#" class="edit-company-link">Edit</a>
+                <a href="#">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Legend Mechanical</td>
+              <td>
+                <a href="#" class="edit-company-link">Edit</a>
+                <a href="#">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td>185 Group</td>
+              <td>
+                <a href="#" class="edit-company-link">Edit</a>
+                <a href="#">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Michaud Copley & Erickson Engineering Solutions</td>
+              <td>
+                <a href="#" class="edit-company-link">Edit</a>
+                <a href="#">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td>AKF Group</td>
+              <td>
+                <a href="#" class="edit-company-link">Edit</a>
+                <a href="#">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td>IMS Johnson</td>
+              <td>
+                <a href="#" class="edit-company-link">Edit</a>
+                <a href="#">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Absolute Mechanical</td>
+              <td>
+                <a href="#" class="edit-company-link">Edit</a>
+                <a href="#">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td>galas O'Brien</td>
+              <td>
+                <a href="#" class="edit-company-link">Edit</a>
+                <a href="#">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Schadegg Mechanical</td>
+              <td>
+                <a href="#" class="edit-company-link">Edit</a>
+                <a href="#">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Northland Mechanical</td>
+              <td>
+                <a href="#" class="edit-company-link">Edit</a>
+                <a href="#">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Sten Engineering</td>
+              <td>
+                <a href="#" class="edit-company-link">Edit</a>
+                <a href="#">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Steiner Plumbing Electric & Heating</td>
+              <td>
+                <a href="#" class="edit-company-link">Edit</a>
+                <a href="#">Remove</a>
+              </td>
+            </tr>
           </tbody>
         </table>
-        <h2 class="gh-form-title" style="text-align:left;">Customer Attendees:</h2>
-        <div style="text-align: right; margin-bottom: 0.5rem;"><a href="#" style="color: #005691; text-decoration: underline; font-weight: 500;">Add Attendees</a></div>
-        <table class="gh-table" style="margin-bottom: 2.5rem;">
+        <h2 class="gh-form-title" style="text-align: left">
+          Customer Attendees:
+        </h2>
+        <div style="text-align: right; margin-bottom: 0.5rem">
+          <a
+            href="#"
+            style="color: #005691; text-decoration: underline; font-weight: 500"
+            >Add Attendees</a
+          >
+        </div>
+        <table class="gh-table" style="margin-bottom: 2.5rem">
           <thead>
             <tr>
               <th>Name</th>
               <th>Company</th>
               <th>Completion Status</th>
-              <th style="width: 120px;">Action</th>
+              <th style="width: 120px">Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Callaghan, Emma</td><td>Michaud Cooley Erickson</td><td><span class="material-icons" style="color: #009e3c; vertical-align: middle;">check_circle</span></td><td><a href="#">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>Compaan, Emily</td><td>Michaud Cooley Erickson</td><td><span class="material-icons" style="color: #009e3c; vertical-align: middle;">check_circle</span></td><td><a href="#">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>Futura, Jim</td><td>TMS Johnson</td><td><span class="material-icons" style="color: #e53935; vertical-align: middle;">error</span></td><td><a href="#">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>Gebel, Craig</td><td>Northland Mechanical</td><td><span class="material-icons" style="color: #e53935; vertical-align: middle;">error</span></td><td><a href="#">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>Smithers, Clay</td><td>IMS Johnson</td><td><span class="material-icons" style="color: #e53935; vertical-align: middle;">error</span></td><td><a href="#">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>Lakener, KLE</td><td>TMS Johnson</td><td><span class="material-icons" style="color: #e53935; vertical-align: middle;">error</span></td><td><a href="#">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>Lange, Cooper</td><td>Countryside Plumbing Electric & Heating</td><td><span class="material-icons" style="color: #e53935; vertical-align: middle;">error</span></td><td><a href="#">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>Larson, Kyle</td><td>Schadegg Mechanical</td><td><span class="material-icons" style="color: #e53935; vertical-align: middle;">error</span></td><td><a href="#">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>Lind, Mike</td><td>IMS Johnson</td><td><span class="material-icons" style="color: #e53935; vertical-align: middle;">error</span></td><td><a href="#">Edit</a> <a href="#">Remove</a></td></tr>
-            <tr><td>Markuson, Logan</td><td>Legend Mechanical</td><td><span class="material-icons" style="color: #e53935; vertical-align: middle;">error</span></td><td><a href="#">Edit</a> <a href="#">Remove</a></td></tr>
+            <tr>
+              <td>Callaghan, Emma</td>
+              <td>Michaud Cooley Erickson</td>
+              <td>
+                <span
+                  class="material-icons"
+                  style="color: #009e3c; vertical-align: middle"
+                  >check_circle</span
+                >
+              </td>
+              <td><a href="#">Edit</a> <a href="#">Remove</a></td>
+            </tr>
+            <tr>
+              <td>Compaan, Emily</td>
+              <td>Michaud Cooley Erickson</td>
+              <td>
+                <span
+                  class="material-icons"
+                  style="color: #009e3c; vertical-align: middle"
+                  >check_circle</span
+                >
+              </td>
+              <td><a href="#">Edit</a> <a href="#">Remove</a></td>
+            </tr>
+            <tr>
+              <td>Futura, Jim</td>
+              <td>TMS Johnson</td>
+              <td>
+                <span
+                  class="material-icons"
+                  style="color: #e53935; vertical-align: middle"
+                  >error</span
+                >
+              </td>
+              <td><a href="#">Edit</a> <a href="#">Remove</a></td>
+            </tr>
+            <tr>
+              <td>Gebel, Craig</td>
+              <td>Northland Mechanical</td>
+              <td>
+                <span
+                  class="material-icons"
+                  style="color: #e53935; vertical-align: middle"
+                  >error</span
+                >
+              </td>
+              <td><a href="#">Edit</a> <a href="#">Remove</a></td>
+            </tr>
+            <tr>
+              <td>Smithers, Clay</td>
+              <td>IMS Johnson</td>
+              <td>
+                <span
+                  class="material-icons"
+                  style="color: #e53935; vertical-align: middle"
+                  >error</span
+                >
+              </td>
+              <td><a href="#">Edit</a> <a href="#">Remove</a></td>
+            </tr>
+            <tr>
+              <td>Lakener, KLE</td>
+              <td>TMS Johnson</td>
+              <td>
+                <span
+                  class="material-icons"
+                  style="color: #e53935; vertical-align: middle"
+                  >error</span
+                >
+              </td>
+              <td><a href="#">Edit</a> <a href="#">Remove</a></td>
+            </tr>
+            <tr>
+              <td>Lange, Cooper</td>
+              <td>Countryside Plumbing Electric & Heating</td>
+              <td>
+                <span
+                  class="material-icons"
+                  style="color: #e53935; vertical-align: middle"
+                  >error</span
+                >
+              </td>
+              <td><a href="#">Edit</a> <a href="#">Remove</a></td>
+            </tr>
+            <tr>
+              <td>Larson, Kyle</td>
+              <td>Schadegg Mechanical</td>
+              <td>
+                <span
+                  class="material-icons"
+                  style="color: #e53935; vertical-align: middle"
+                  >error</span
+                >
+              </td>
+              <td><a href="#">Edit</a> <a href="#">Remove</a></td>
+            </tr>
+            <tr>
+              <td>Lind, Mike</td>
+              <td>IMS Johnson</td>
+              <td>
+                <span
+                  class="material-icons"
+                  style="color: #e53935; vertical-align: middle"
+                  >error</span
+                >
+              </td>
+              <td><a href="#">Edit</a> <a href="#">Remove</a></td>
+            </tr>
+            <tr>
+              <td>Markuson, Logan</td>
+              <td>Legend Mechanical</td>
+              <td>
+                <span
+                  class="material-icons"
+                  style="color: #e53935; vertical-align: middle"
+                  >error</span
+                >
+              </td>
+              <td><a href="#">Edit</a> <a href="#">Remove</a></td>
+            </tr>
           </tbody>
         </table>
-        <h2 class="gh-form-title" style="text-align:left;">Rep Attendees:</h2>
-        <div style="text-align: right; margin-bottom: 0.5rem;"><a href="#" style="color: #005691; text-decoration: underline; font-weight: 500;">Add Rep Attendees</a></div>
-        <table class="gh-table" style="margin-bottom: 2.5rem;">
+        <h2 class="gh-form-title" style="text-align: left">Rep Attendees:</h2>
+        <div style="text-align: right; margin-bottom: 0.5rem">
+          <a
+            href="#"
+            style="color: #005691; text-decoration: underline; font-weight: 500"
+            >Add Rep Attendees</a
+          >
+        </div>
+        <table class="gh-table" style="margin-bottom: 2.5rem">
           <thead>
             <tr>
               <th>Name</th>
               <th>Company</th>
               <th>Completion Status</th>
-              <th style="width: 120px;">Action</th>
+              <th style="width: 120px">Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Fischbach, Gary</td><td>TMS JOHNSON INC 1344</td><td><span class="material-icons" style="color: #009e3c; vertical-align: middle;">check_circle</span></td><td><a href="#">Edit</a> <a href="#">Remove</a></td></tr>
+            <tr>
+              <td>Fischbach, Gary</td>
+              <td>TMS JOHNSON INC 1344</td>
+              <td>
+                <span
+                  class="material-icons"
+                  style="color: #009e3c; vertical-align: middle"
+                  >check_circle</span
+                >
+              </td>
+              <td><a href="#">Edit</a> <a href="#">Remove</a></td>
+            </tr>
           </tbody>
         </table>
-        <h2 class="gh-form-title" style="text-align:left;">Travel Information (All Attendees):</h2>
-        <table class="gh-table" style="margin-bottom: 2.5rem;">
+        <h2 class="gh-form-title" style="text-align: left">
+          Travel Information (All Attendees):
+        </h2>
+        <table class="gh-table" style="margin-bottom: 2.5rem">
           <thead>
             <tr>
               <th>Name</th>
               <th>Hotel</th>
               <th>Driving</th>
               <th>Flight Information</th>
-              <th style="width: 120px;">Action</th>
+              <th style="width: 120px">Action</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Callaghan, Emma</td>
-              <td>Confirmation #: HIXPRESS8675309<br />Check In / Out<br />7/20/2025 | 7/24/2025</td>
+              <td>
+                Confirmation #: HIXPRESS8675309<br />Check In / Out<br />7/20/2025
+                | 7/24/2025
+              </td>
               <td>Drive Arrival Date/Time:<br />7/20/2025 | 6:00 AM CST</td>
-              <td>Arrival:<br />Central Wisconsin Airport (CWA)<br />Delta Airlines<br />D4593 | 4:06 PM CST<br />Departure:<br />Central Wisconsin Airport (CWA)<br />Delta Airlines<br />D3964 | 6:00 AM CST</td>
+              <td>
+                Arrival:<br />Central Wisconsin Airport (CWA)<br />Delta
+                Airlines<br />D4593 | 4:06 PM CST<br />Departure:<br />Central
+                Wisconsin Airport (CWA)<br />Delta Airlines<br />D3964 | 6:00 AM
+                CST
+              </td>
               <td><a href="#">Edit</a> <a href="#">Remove</a></td>
             </tr>
             <tr>
@@ -159,139 +419,397 @@
             </tr>
             <tr>
               <td>Futura, Jim</td>
-              <td>Confirmation #: HIXPRESS8675309<br />Check In / Out<br />7/20/2025 | 7/24/2025</td>
+              <td>
+                Confirmation #: HIXPRESS8675309<br />Check In / Out<br />7/20/2025
+                | 7/24/2025
+              </td>
               <td>Drive Arrival Date/Time:<br />—</td>
-              <td>Arrival:<br />Central Wisconsin Airport (CWA)<br />Delta Airlines<br />D4593 | 4:06 PM CST<br />Departure:<br />Central Wisconsin Airport (CWA)<br />Delta Airlines<br />D3964 | 6:00 AM CST</td>
+              <td>
+                Arrival:<br />Central Wisconsin Airport (CWA)<br />Delta
+                Airlines<br />D4593 | 4:06 PM CST<br />Departure:<br />Central
+                Wisconsin Airport (CWA)<br />Delta Airlines<br />D3964 | 6:00 AM
+                CST
+              </td>
               <td><a href="#">Edit</a> <a href="#">Remove</a></td>
             </tr>
             <tr>
               <td>Smithers, Clay</td>
-              <td>Confirmation #: HIXPRESS8675309<br />Check In / Out<br />7/20/2025 | 7/24/2025</td>
+              <td>
+                Confirmation #: HIXPRESS8675309<br />Check In / Out<br />7/20/2025
+                | 7/24/2025
+              </td>
               <td>Drive Arrival Date/Time:<br />7/20/2025 | 6:00 AM CST</td>
-              <td>Arrival:<br />Central Wisconsin Airport (CWA)<br />Delta Airlines<br />D4593 | 4:06 PM CST<br />Departure:<br />Central Wisconsin Airport (CWA)<br />Delta Airlines<br />D3964 | 6:00 AM CST</td>
+              <td>
+                Arrival:<br />Central Wisconsin Airport (CWA)<br />Delta
+                Airlines<br />D4593 | 4:06 PM CST<br />Departure:<br />Central
+                Wisconsin Airport (CWA)<br />Delta Airlines<br />D3964 | 6:00 AM
+                CST
+              </td>
               <td><a href="#">Edit</a> <a href="#">Remove</a></td>
             </tr>
             <tr>
               <td>Kellner, Chris</td>
-              <td>Confirmation #: HIXPRESS8675309<br />Check In / Out<br />7/20/2025 | 7/24/2025</td>
+              <td>
+                Confirmation #: HIXPRESS8675309<br />Check In / Out<br />7/20/2025
+                | 7/24/2025
+              </td>
               <td>Drive Arrival Date/Time:<br />7/20/2025 | 6:00 AM CST</td>
-              <td>Arrival:<br />Central Wisconsin Airport (CWA)<br />Delta Airlines<br />D4593 | 4:06 PM CST<br />Departure:<br />Central Wisconsin Airport (CWA)<br />Delta Airlines<br />D3964 | 6:00 AM CST</td>
+              <td>
+                Arrival:<br />Central Wisconsin Airport (CWA)<br />Delta
+                Airlines<br />D4593 | 4:06 PM CST<br />Departure:<br />Central
+                Wisconsin Airport (CWA)<br />Delta Airlines<br />D3964 | 6:00 AM
+                CST
+              </td>
               <td><a href="#">Edit</a> <a href="#">Remove</a></td>
             </tr>
             <tr>
               <td>Fischbach, Gary</td>
-              <td>Confirmation #: HIXPRESS8675309<br />Check In / Out<br />7/20/2025 | 7/24/2025</td>
+              <td>
+                Confirmation #: HIXPRESS8675309<br />Check In / Out<br />7/20/2025
+                | 7/24/2025
+              </td>
               <td>Drive Arrival Date/Time:<br />7/20/2025 | 6:00 AM CST</td>
-              <td>Arrival:<br />Central Wisconsin Airport (CWA)<br />Delta Airlines<br />D4593 | 4:06 PM CST<br />Departure:<br />Central Wisconsin Airport (CWA)<br />Delta Airlines<br />D3964 | 6:00 AM CST</td>
+              <td>
+                Arrival:<br />Central Wisconsin Airport (CWA)<br />Delta
+                Airlines<br />D4593 | 4:06 PM CST<br />Departure:<br />Central
+                Wisconsin Airport (CWA)<br />Delta Airlines<br />D3964 | 6:00 AM
+                CST
+              </td>
               <td><a href="#">Edit</a> <a href="#">Remove</a></td>
             </tr>
           </tbody>
         </table>
       </section>
-      <div style="text-align: center; margin: 2.5rem 0 0 0;">
-        <button class="gh-btn gh-btn-outline" onclick="window.location.href='index.html'">Return to Main Planner Start Page</button>
+      <div style="text-align: center; margin: 2.5rem 0 0 0">
+        <button
+          class="gh-btn gh-btn-outline"
+          onclick="window.location.href='index.html'"
+        >
+          Return to Main Planner Start Page
+        </button>
       </div>
     </main>
     <!-- Edit Company Modal -->
-    <div id="edit-company-modal" class="gh-modal" style="display:none;">
+    <div id="edit-company-modal" class="gh-modal" style="display: none">
       <div class="gh-modal-overlay"></div>
-      <div class="gh-modal-content" role="dialog" aria-modal="true" aria-labelledby="editCompanyTitle">
-        <button class="gh-modal-close" id="close-edit-company" aria-label="Close"><span class="material-icons">close</span></button>
-        <h2 id="editCompanyTitle" style="margin-top:0;">Edit Company Additional Information</h2>
-        <div style="margin-bottom:1.5rem;"><strong>Company Name:</strong><br><span id="edit-company-name" style="font-weight:600;">Legend Mechanical</span></div>
-        <hr style="margin-bottom:1.5rem;">
+      <div
+        class="gh-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="editCompanyTitle"
+      >
+        <button
+          class="gh-modal-close"
+          id="close-edit-company"
+          aria-label="Close"
+        >
+          <span class="material-icons">close</span>
+        </button>
+        <h2 id="editCompanyTitle" style="margin-top: 0">
+          Edit Company Additional Information
+        </h2>
+        <div style="margin-bottom: 1.5rem">
+          <strong>Company Name:</strong><br /><span
+            id="edit-company-name"
+            style="font-weight: 600"
+            >Legend Mechanical</span
+          >
+        </div>
+        <hr style="margin-bottom: 1.5rem" />
         <form id="edit-company-form" autocomplete="off">
           <label class="gh-label">Year Established</label>
-          <input type="text" class="gh-input" value="2010" style="width:100%;margin-bottom:1.5rem;" />
+          <input
+            type="text"
+            class="gh-input"
+            value="2010"
+            style="width: 100%; margin-bottom: 1.5rem"
+          />
           <label class="gh-label">Additional Location(s)</label>
-          <textarea class="gh-textarea" style="width:100%;margin-bottom:1.5rem;">8440 Eagle Creek Pkwy, Savage, MN 55378</textarea>
-          <label class="gh-label">Company or project focus <span style="float:right;font-size:0.95em;" id="focus-count">206/250</span></label>
-          <textarea class="gh-textarea" maxlength="250" style="width:100%;margin-bottom:1.5rem;">Develop and maintain long-standing partnerships with our customers. From emergency service and repair calls, complex HVAC/Plumbing/Piping projects, facility and kitchen equipment services, and building automation systems and controls</textarea>
+          <textarea
+            class="gh-textarea"
+            style="width: 100%; margin-bottom: 1.5rem"
+          >
+8440 Eagle Creek Pkwy, Savage, MN 55378</textarea
+          >
+          <label class="gh-label"
+            >Company or project focus
+            <span style="float: right; font-size: 0.95em" id="focus-count"
+              >206/250</span
+            ></label
+          >
+          <textarea
+            class="gh-textarea"
+            maxlength="250"
+            style="width: 100%; margin-bottom: 1.5rem"
+          >
+Develop and maintain long-standing partnerships with our customers. From emergency service and repair calls, complex HVAC/Plumbing/Piping projects, facility and kitchen equipment services, and building automation systems and controls</textarea
+          >
           <label class="gh-label">Select areas of interest</label>
-          <select class="gh-input" style="width:100%;margin-bottom:2rem;">
+          <select class="gh-input" style="width: 100%; margin-bottom: 2rem">
             <option>Power Roof Ventilators</option>
             <option>Fans</option>
             <option>Louvers</option>
             <option>Other</option>
           </select>
-          <div style="display:flex;justify-content:space-between;gap:1.5rem;">
-            <button type="button" class="gh-btn gh-btn-outline gh-btn-large" id="clear-company-fields">Clear All Fields</button>
-            <button type="submit" class="gh-btn gh-btn-table gh-btn-large">Save Edits</button>
+          <div
+            style="display: flex; justify-content: space-between; gap: 1.5rem"
+          >
+            <button
+              type="button"
+              class="gh-btn gh-btn-outline gh-btn-large"
+              id="clear-company-fields"
+            >
+              Clear All Fields
+            </button>
+            <button type="submit" class="gh-btn gh-btn-table gh-btn-large">
+              Save Edits
+            </button>
           </div>
         </form>
       </div>
     </div>
     <!-- Edit Attendee Modal -->
-    <div id="edit-attendee-modal" class="gh-modal" style="display:none;">
+    <div id="edit-attendee-modal" class="gh-modal" style="display: none">
       <div class="gh-modal-overlay"></div>
-      <div class="gh-modal-content" role="dialog" aria-modal="true" aria-labelledby="editAttendeeTitle">
-        <button class="gh-modal-close" id="close-edit-attendee" aria-label="Close"><span class="material-icons">close</span></button>
-        <h2 id="editAttendeeTitle" style="margin-top:0;">Edit Attendee Additional Information</h2>
-        <div style="margin-bottom:1.5rem;"><strong>Attendee Name:</strong><br><span id="edit-attendee-name" style="font-weight:600;">Callaghan, Emma</span></div>
-        <hr style="margin-bottom:1.5rem;">
+      <div
+        class="gh-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="editAttendeeTitle"
+      >
+        <button
+          class="gh-modal-close"
+          id="close-edit-attendee"
+          aria-label="Close"
+        >
+          <span class="material-icons">close</span>
+        </button>
+        <h2 id="editAttendeeTitle" style="margin-top: 0">
+          Edit Attendee Additional Information
+        </h2>
+        <div style="margin-bottom: 1.5rem">
+          <strong>Attendee Name:</strong><br /><span
+            id="edit-attendee-name"
+            style="font-weight: 600"
+            >Callaghan, Emma</span
+          >
+        </div>
+        <hr style="margin-bottom: 1.5rem" />
         <form id="edit-attendee-form" autocomplete="off">
           <label class="gh-label">Job Title</label>
-          <input type="text" class="gh-input" value="Senior Building Systems Engineer" style="width:100%;margin-bottom:1.5rem;" />
-          <label class="gh-label">* Name on Badge (How Attendee name will appear on badge)</label>
-          <input type="text" class="gh-input" value="Emma C." style="width:100%;margin-bottom:1.5rem;" />
-          <label class="gh-label">Dietary Restrictions/Special Requirements <span style="float:right;font-size:0.95em;" id="attendee-diet-count">34/1200</span></label>
-          <textarea class="gh-textarea" maxlength="1200" style="width:100%;margin-bottom:1.5rem;">Gluten Free. Prefers front row seating.</textarea>
-          <label class="gh-label">Comments <span style="float:right;font-size:0.95em;" id="attendee-comments-count">191/1200</span></label>
-          <textarea class="gh-textarea" maxlength="1200" style="width:100%;margin-bottom:1.5rem;">Greenheck product overviews and demos. Unique advantages offered over competitors. Product types of specific interest include; Power Roof Ventilators, Commercial Dampers, Motor Technology and Laboratory . Fume Exhaust.</textarea>
-          <div style="display:flex;align-items:flex-end;gap:1.5rem;margin-bottom:2rem;">
-            <div style="flex:1;">
+          <input
+            type="text"
+            class="gh-input"
+            value="Senior Building Systems Engineer"
+            style="width: 100%; margin-bottom: 1.5rem"
+          />
+          <label class="gh-label"
+            >* Name on Badge (How Attendee name will appear on badge)</label
+          >
+          <input
+            type="text"
+            class="gh-input"
+            value="Emma C."
+            style="width: 100%; margin-bottom: 1.5rem"
+          />
+          <label class="gh-label"
+            >Dietary Restrictions/Special Requirements
+            <span
+              style="float: right; font-size: 0.95em"
+              id="attendee-diet-count"
+              >34/1200</span
+            ></label
+          >
+          <textarea
+            class="gh-textarea"
+            maxlength="1200"
+            style="width: 100%; margin-bottom: 1.5rem"
+          >
+Gluten Free. Prefers front row seating.</textarea
+          >
+          <label class="gh-label"
+            >Comments
+            <span
+              style="float: right; font-size: 0.95em"
+              id="attendee-comments-count"
+              >191/1200</span
+            ></label
+          >
+          <textarea
+            class="gh-textarea"
+            maxlength="1200"
+            style="width: 100%; margin-bottom: 1.5rem"
+          >
+Greenheck product overviews and demos. Unique advantages offered over competitors. Product types of specific interest include; Power Roof Ventilators, Commercial Dampers, Motor Technology and Laboratory . Fume Exhaust.</textarea
+          >
+          <div
+            style="
+              display: flex;
+              align-items: flex-end;
+              gap: 1.5rem;
+              margin-bottom: 2rem;
+            "
+          >
+            <div style="flex: 1">
               <label class="gh-label">Prayer Time?</label><br />
-              <label style="margin-right: 1em;"><input type="radio" name="prayer-time" value="yes" checked /> Yes</label>
-              <label><input type="radio" name="prayer-time" value="no" /> No</label>
+              <label style="margin-right: 1em"
+                ><input type="radio" name="prayer-time" value="yes" checked />
+                Yes</label
+              >
+              <label
+                ><input type="radio" name="prayer-time" value="no" /> No</label
+              >
             </div>
-            <div style="flex:1;">
+            <div style="flex: 1">
               <label class="gh-label">Enter prayer time</label>
-              <input type="text" class="gh-input" value="12:30 PM (CST)" style="width:100%;" />
+              <input
+                type="text"
+                class="gh-input"
+                value="12:30 PM (CST)"
+                style="width: 100%"
+              />
             </div>
           </div>
-          <div style="display:flex;justify-content:space-between;gap:1.5rem;">
-            <button type="button" class="gh-btn gh-btn-outline gh-btn-large" id="clear-attendee-fields">Clear All Fields</button>
-            <button type="submit" class="gh-btn gh-btn-table gh-btn-large">Save Edits</button>
+          <div
+            style="display: flex; justify-content: space-between; gap: 1.5rem"
+          >
+            <button
+              type="button"
+              class="gh-btn gh-btn-outline gh-btn-large"
+              id="clear-attendee-fields"
+            >
+              Clear All Fields
+            </button>
+            <button type="submit" class="gh-btn gh-btn-table gh-btn-large">
+              Save Edits
+            </button>
           </div>
         </form>
       </div>
     </div>
     <!-- Edit Rep Attendee Modal -->
-    <div id="edit-rep-modal" class="gh-modal" style="display:none;">
+    <div id="edit-rep-modal" class="gh-modal" style="display: none">
       <div class="gh-modal-overlay"></div>
-      <div class="gh-modal-content" role="dialog" aria-modal="true" aria-labelledby="editRepTitle">
-        <button class="gh-modal-close" id="close-edit-rep" aria-label="Close"><span class="material-icons">close</span></button>
-        <h2 id="editRepTitle" style="margin-top:0;">Edit Rep Attendee Additional Information</h2>
-        <div style="margin-bottom:1.5rem;"><strong>Rep Attendee Name:</strong><br><span id="edit-rep-name" style="font-weight:600;">Fischbach, Gary</span></div>
-        <hr style="margin-bottom:1.5rem;">
+      <div
+        class="gh-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="editRepTitle"
+      >
+        <button class="gh-modal-close" id="close-edit-rep" aria-label="Close">
+          <span class="material-icons">close</span>
+        </button>
+        <h2 id="editRepTitle" style="margin-top: 0">
+          Edit Rep Attendee Additional Information
+        </h2>
+        <div style="margin-bottom: 1.5rem">
+          <strong>Rep Attendee Name:</strong><br /><span
+            id="edit-rep-name"
+            style="font-weight: 600"
+            >Fischbach, Gary</span
+          >
+        </div>
+        <hr style="margin-bottom: 1.5rem" />
         <form id="edit-rep-form" autocomplete="off">
-          <div style="margin-bottom:1.5rem;">
-            <label style="display: flex; align-items: center; gap: 0.5em; font-size: 1em;">
-              <input type="checkbox" class="gh-attendee-details-main-contact" /> Designate as main visit contact
+          <div style="margin-bottom: 1.5rem">
+            <label
+              style="
+                display: flex;
+                align-items: center;
+                gap: 0.5em;
+                font-size: 1em;
+              "
+            >
+              <input type="checkbox" class="gh-attendee-details-main-contact" />
+              Designate as main visit contact
             </label>
           </div>
           <label class="gh-label">Mobile Phone Number</label>
-          <input type="text" class="gh-input" value="(715) 123-4567" style="width:100%;margin-bottom:1.5rem;" />
-          <label class="gh-label">* Name on Badge (How Attendee name will appear on badge)</label>
-          <input type="text" class="gh-input" value="Gary" style="width:100%;margin-bottom:1.5rem;" />
-          <label class="gh-label">Dietary Restrictions/Special Requirements <span style="float:right;font-size:0.95em;" id="rep-diet-count">50/1200</span></label>
-          <textarea class="gh-textarea" maxlength="1200" style="width:100%;margin-bottom:1.5rem;">Gatorade or energy drinks are preferred beverage choices.</textarea>
-          <label class="gh-label">Comments <span style="float:right;font-size:0.95em;" id="rep-comments-count">164/1200</span></label>
-          <textarea class="gh-textarea" maxlength="1200" style="width:100%;margin-bottom:1.5rem;">I'd like to see my customers engaged and learning in a fun environment. CAPS, eCAPS and Website overviews. Make strong connections to our business. Meaningful takeaways they can apply every day.</textarea>
-          <div style="display:flex;align-items:flex-end;gap:1.5rem;margin-bottom:2rem;">
-            <div style="flex:1;">
+          <input
+            type="text"
+            class="gh-input"
+            value="(715) 123-4567"
+            style="width: 100%; margin-bottom: 1.5rem"
+          />
+          <label class="gh-label"
+            >* Name on Badge (How Attendee name will appear on badge)</label
+          >
+          <input
+            type="text"
+            class="gh-input"
+            value="Gary"
+            style="width: 100%; margin-bottom: 1.5rem"
+          />
+          <label class="gh-label"
+            >Dietary Restrictions/Special Requirements
+            <span style="float: right; font-size: 0.95em" id="rep-diet-count"
+              >50/1200</span
+            ></label
+          >
+          <textarea
+            class="gh-textarea"
+            maxlength="1200"
+            style="width: 100%; margin-bottom: 1.5rem"
+          >
+Gatorade or energy drinks are preferred beverage choices.</textarea
+          >
+          <label class="gh-label"
+            >Comments
+            <span
+              style="float: right; font-size: 0.95em"
+              id="rep-comments-count"
+              >164/1200</span
+            ></label
+          >
+          <textarea
+            class="gh-textarea"
+            maxlength="1200"
+            style="width: 100%; margin-bottom: 1.5rem"
+          >
+I'd like to see my customers engaged and learning in a fun environment. CAPS, eCAPS and Website overviews. Make strong connections to our business. Meaningful takeaways they can apply every day.</textarea
+          >
+          <div
+            style="
+              display: flex;
+              align-items: flex-end;
+              gap: 1.5rem;
+              margin-bottom: 2rem;
+            "
+          >
+            <div style="flex: 1">
               <label class="gh-label">Prayer Time?</label><br />
-              <label style="margin-right: 1em;"><input type="radio" name="rep-prayer-time" value="yes" /> Yes</label>
-              <label><input type="radio" name="rep-prayer-time" value="no" checked /> No</label>
+              <label style="margin-right: 1em"
+                ><input type="radio" name="rep-prayer-time" value="yes" />
+                Yes</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="rep-prayer-time"
+                  value="no"
+                  checked
+                />
+                No</label
+              >
             </div>
-            <div style="flex:1;">
+            <div style="flex: 1">
               <label class="gh-label">Enter prayer time</label>
-              <input type="text" class="gh-input" style="width:100%;" />
+              <input type="text" class="gh-input" style="width: 100%" />
             </div>
           </div>
-          <div style="display:flex;justify-content:space-between;gap:1.5rem;">
-            <button type="button" class="gh-btn gh-btn-outline gh-btn-large" id="clear-rep-fields">Clear All Fields</button>
-            <button type="submit" class="gh-btn gh-btn-table gh-btn-large">Save Edits</button>
+          <div
+            style="display: flex; justify-content: space-between; gap: 1.5rem"
+          >
+            <button
+              type="button"
+              class="gh-btn gh-btn-outline gh-btn-large"
+              id="clear-rep-fields"
+            >
+              Clear All Fields
+            </button>
+            <button type="submit" class="gh-btn gh-btn-table gh-btn-large">
+              Save Edits
+            </button>
           </div>
         </form>
       </div>
@@ -299,58 +817,70 @@
     <script src="scripts/main.js"></script>
     <script>
       // Modal open/close logic for Edit Company (dynamic)
-      document.querySelectorAll('.edit-company-link').forEach(function(link) {
-        link.addEventListener('click', function(e) {
+      document.querySelectorAll('.edit-company-link').forEach(function (link) {
+        link.addEventListener('click', function (e) {
           e.preventDefault();
           var row = link.closest('tr');
           var companyName = row.querySelector('td').textContent.trim();
-          document.getElementById('edit-company-name').textContent = companyName;
+          document.getElementById('edit-company-name').textContent =
+            companyName;
           document.getElementById('edit-company-modal').style.display = 'block';
         });
       });
-      document.getElementById('close-edit-company').onclick = function() {
+      document.getElementById('close-edit-company').onclick = function () {
         document.getElementById('edit-company-modal').style.display = 'none';
       };
-      document.querySelector('#edit-company-modal .gh-modal-overlay').onclick = function() {
-        document.getElementById('edit-company-modal').style.display = 'none';
-      };
+      document.querySelector('#edit-company-modal .gh-modal-overlay').onclick =
+        function () {
+          document.getElementById('edit-company-modal').style.display = 'none';
+        };
       // Modal open/close logic for Edit Attendee (dynamic)
-      document.querySelectorAll('.gh-table:nth-of-type(3) a').forEach(function(link) {
-        if(link.textContent.trim() === 'Edit') {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            var row = link.closest('tr');
-            var attendeeName = row.querySelector('td').textContent.trim();
-            document.getElementById('edit-attendee-name').textContent = attendeeName;
-            document.getElementById('edit-attendee-modal').style.display = 'block';
-          });
-        }
-      });
-      document.getElementById('close-edit-attendee').onclick = function() {
+      document
+        .querySelectorAll('.gh-table:nth-of-type(3) a')
+        .forEach(function (link) {
+          if (link.textContent.trim() === 'Edit') {
+            link.addEventListener('click', function (e) {
+              e.preventDefault();
+              var row = link.closest('tr');
+              var attendeeName = row.querySelector('td').textContent.trim();
+              document.getElementById('edit-attendee-name').textContent =
+                attendeeName;
+              document.getElementById('edit-attendee-modal').style.display =
+                'block';
+            });
+          }
+        });
+      document.getElementById('close-edit-attendee').onclick = function () {
         document.getElementById('edit-attendee-modal').style.display = 'none';
       };
-      document.querySelector('#edit-attendee-modal .gh-modal-overlay').onclick = function() {
-        document.getElementById('edit-attendee-modal').style.display = 'none';
-      };
+      document.querySelector('#edit-attendee-modal .gh-modal-overlay').onclick =
+        function () {
+          document.getElementById('edit-attendee-modal').style.display = 'none';
+        };
       // Modal open/close logic for Edit Rep Attendee (dynamic)
-      document.querySelectorAll('.gh-table:nth-of-type(4) a').forEach(function(link) {
-        if(link.textContent.trim() === 'Edit') {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            var row = link.closest('tr');
-            var repName = row.querySelector('td').textContent.trim();
-            document.getElementById('edit-rep-name').textContent = repName;
-            document.getElementById('edit-rep-modal').style.display = 'block';
-          });
-        }
-      });
-      document.getElementById('close-edit-rep').onclick = function() {
+      document
+        .querySelectorAll('.gh-table:nth-of-type(4) a')
+        .forEach(function (link) {
+          if (link.textContent.trim() === 'Edit') {
+            link.addEventListener('click', function (e) {
+              e.preventDefault();
+              var row = link.closest('tr');
+              var repName = row.querySelector('td').textContent.trim();
+              document.getElementById('edit-rep-name').textContent = repName;
+              document.getElementById('edit-rep-modal').style.display = 'block';
+            });
+          }
+        });
+      document.getElementById('close-edit-rep').onclick = function () {
         document.getElementById('edit-rep-modal').style.display = 'none';
       };
-      document.querySelector('#edit-rep-modal .gh-modal-overlay').onclick = function() {
-        document.getElementById('edit-rep-modal').style.display = 'none';
-      };
+      document.querySelector('#edit-rep-modal .gh-modal-overlay').onclick =
+        function () {
+          document.getElementById('edit-rep-modal').style.display = 'none';
+        };
     </script>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
-</html> 
+</html>

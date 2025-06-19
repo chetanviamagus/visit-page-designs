@@ -118,7 +118,7 @@ body {
 .gh-main-desc {
   font-size: 22px;
   color: #57585a;
-  margin: 10px 0 0 0;
+  margin: 10px 0 24px 0;
   text-align: left;
   font-family: 'Roboto', var(--gh-font);
 }

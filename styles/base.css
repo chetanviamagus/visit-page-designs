@@ -93,7 +93,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+
   padding: 24px 0;
   max-width: 1246px;
   margin: 0 auto;
@@ -118,7 +118,7 @@ body {
 .gh-main-desc {
   font-size: 22px;
   color: #57585a;
-  margin: 10px 0 24px 0;
+  margin: 10px 0 0 0;
   text-align: left;
   font-family: 'Roboto', var(--gh-font);
 }
@@ -181,8 +181,9 @@ body {
   color: var(--gh-primary);
 }
 .gh-cancel-info {
-  font-size: 1.1rem;
-  color: #444;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(87, 88, 90, 1);
   margin-bottom: 2.5rem;
   text-align: center;
 }
@@ -196,7 +197,7 @@ body {
   align-items: center;
   padding: 2rem 1rem 1rem 1rem;
   background: #fff;
-  border-top: 1px solid var(--gh-border);
+
   font-size: 1rem;
   gap: 0.5rem;
 }
@@ -206,7 +207,8 @@ body {
   gap: 1rem;
 }
 .gh-footer-logo-img {
-  height: 40px;
+  height: 44px;
+  width: 180px;
 }
 .gh-footer-logo-text {
   display: flex;
@@ -215,7 +217,7 @@ body {
 }
 .gh-footer-address {
   color: #444;
-  font-size: 0.95rem;
+  font-size: 12px;
   text-align: center;
 }
 @media (max-width: 900px) {
@@ -289,11 +291,8 @@ body {
   position: relative;
 }
 
-.gh-table tr:last-child td {
-  /* border-bottom: none; */
-}
 td.gh-table-availability {
-  font-weight: 500;
+  font-weight: 700;
   font-size: 20px;
   font-family: var(--gh-font-bold);
   color: var(--gh-primary);
@@ -423,6 +422,7 @@ td.gh-table-availability {
   width: 100%;
   max-width: 1200px;
   margin: 2.5rem auto;
+  margin-left: 0;
 }
 .gh-stepper ul {
   display: flex;
@@ -506,12 +506,12 @@ td.gh-table-availability {
   margin: 0 auto 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 10px;
   padding-bottom: 2rem;
 }
 .gh-form-title {
-  font-size: 1.18rem;
-  font-weight: 500;
+  font-size: 19px;
+  font-weight: 700;
   margin-bottom: 0.5rem;
   color: #444;
 }
@@ -606,7 +606,7 @@ td.gh-table-availability {
 .gh-create-account a {
   color: var(--gh-primary);
   font-size: 1rem;
-  text-decoration: underline;
+  text-decoration: none;
   font-weight: 500;
 }
 .gh-create-account a:hover,
@@ -615,16 +615,15 @@ td.gh-table-availability {
 }
 
 .gh-custom-select {
-  position: relative;
+  max-width: 520px;
   width: 100%;
-  max-width: 420px;
-  outline: none;
-  background: #fff;
+  position: relative;
 }
 .gh-select-trigger {
-  width: 100%;
-  padding: 1rem 1.2rem;
-  font-size: 1.08rem;
+  width: 520px;
+  max-width: 520px;
+  min-width: 520px;
+  box-sizing: border-box;
   border: 1.5px solid #bfc7d1;
   border-radius: 0.4rem;
   background: #fff;
@@ -635,44 +634,61 @@ td.gh-table-availability {
   cursor: pointer;
   font-family: 'Roboto', var(--gh-font);
   min-height: 52px;
+  font-size: 1.08rem;
+  transition: border-radius 0.15s, box-shadow 0.15s;
 }
 .gh-custom-select[aria-expanded='true'] .gh-select-trigger {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  border-color: var(--gh-primary);
+  border-bottom: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  z-index: 11;
 }
 .gh-select-options {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: #fff;
+  width: 520px;
+  max-width: 520px;
+  overflow-y: auto;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  scrollbar-color: #bfc7d1 #fff;
   border: 1.5px solid #bfc7d1;
   border-top: none;
   border-radius: 0 0 0.4rem 0.4rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  background: #fff;
   z-index: 10;
-  max-height: 220px;
-  overflow-y: auto;
-  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 0;
   padding: 0.3rem 0;
   list-style: none;
   font-size: 1.08rem;
 }
+.gh-select-options::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.gh-select-options::-webkit-scrollbar-thumb {
+  background: #bfc7d1;
+  border-radius: 4px;
+}
+.gh-select-options::-webkit-scrollbar-track {
+  background: #fff;
+}
 .gh-select-option {
-  padding: 0.7rem 1rem;
-  cursor: pointer;
   display: flex;
   align-items: center;
-  font-size: 1rem;
-  font-family: 'Roboto', var(--gh-font);
-}
-.gh-select-option[aria-selected='true'],
-.gh-select-option:hover {
-  background: #e5e7eb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.7rem 1rem;
+  font-size: 1.08rem;
 }
 .gh-option-bold {
   font-weight: 700;
+  margin-right: 0.3em;
 }
 .gh-option-normal {
   font-weight: 400;

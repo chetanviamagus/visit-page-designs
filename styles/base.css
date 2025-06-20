@@ -381,7 +381,8 @@ td.gh-table-availability {
   display: flex;
   justify-content: flex-start;
   gap: 1.5rem;
-  margin: 25px 0 1.5rem 0;
+  margin: 25px auto 0 auto;
+  padding-right: 39px;
 }
 .gh-btn-large {
   padding: 10px 30px;
@@ -649,8 +650,7 @@ td.gh-table-availability {
   z-index: 11;
 }
 .gh-select-options {
-  width: 520px;
-  max-width: 520px;
+  width: 100%;
   overflow-y: scroll;
   overflow-x: auto;
   white-space: nowrap;

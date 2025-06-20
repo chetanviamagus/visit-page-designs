@@ -117,78 +117,83 @@
           hidden
         >
           <div class="gh-additional-info-fields-container">
-            <label for="year-established" class="gh-label"
-              >Year Established</label
-            >
-            <input
-              type="text"
-              id="year-established"
-              class="gh-input"
-              placeholder=""
-            />
-
-            <label for="additional-locations" class="gh-label"
-              >Additional Location(s)</label
-            >
-            <textarea
-              id="additional-locations"
-              class="gh-textarea"
-              placeholder="City and State..."
-            ></textarea>
-
-            <label for="project-focus" class="gh-label"
-              >Company or project focus
-              <span id="focus-count" class="gh-char-count">0/250</span></label
-            >
-            <textarea
-              id="project-focus"
-              class="gh-textarea"
-              maxlength="250"
-              placeholder="Type here..."
-            ></textarea>
-
-            <label class="gh-label">Select areas of interest</label>
-            <div
-              class="gh-custom-select"
-              id="areas-interest-select"
-              tabindex="0"
-              aria-haspopup="listbox"
-              aria-expanded="false"
-            >
-              <button
-                class="gh-select-trigger"
-                aria-label="Select areas of interest"
-                type="button"
+            <div class="gh-label-input-group">
+              <label for="year-established" class="gh-label"
+                >Year Established</label
               >
-                <span class="gh-select-value">Select</span>
-                <span class="material-icons">expand_more</span>
-              </button>
-              <ul class="gh-select-options" role="listbox" hidden>
-                <li class="gh-select-option" role="option" data-value="hvac">
-                  <span class="gh-option-bold">HVAC</span>
-                </li>
-                <li
-                  class="gh-select-option"
-                  role="option"
-                  data-value="plumbing"
+              <input
+                type="text"
+                id="year-established"
+                class="gh-input"
+                placeholder=""
+              />
+            </div>
+            <div class="gh-label-input-group">
+              <label for="additional-locations" class="gh-label"
+                >Additional Location(s)</label
+              >
+              <textarea
+                id="additional-locations"
+                class="gh-textarea"
+                placeholder="City and State..."
+              ></textarea>
+            </div>
+            <div class="gh-label-input-group">
+              <label for="project-focus" class="gh-label"
+                >Company or project focus
+                <span id="focus-count" class="gh-char-count">0/250</span></label
+              >
+              <textarea
+                id="project-focus"
+                class="gh-textarea"
+                maxlength="250"
+                placeholder="Type here..."
+              ></textarea>
+            </div>
+            <div class="gh-label-input-group">
+              <label class="gh-label">Select areas of interest</label>
+              <div
+                class="gh-custom-select"
+                id="areas-interest-select"
+                tabindex="0"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+              >
+                <button
+                  class="gh-select-trigger"
+                  aria-label="Select areas of interest"
+                  type="button"
                 >
-                  <span class="gh-option-bold">Plumbing</span>
-                </li>
-                <li
-                  class="gh-select-option"
-                  role="option"
-                  data-value="electrical"
-                >
-                  <span class="gh-option-bold">Electrical</span>
-                </li>
-                <li
-                  class="gh-select-option"
-                  role="option"
-                  data-value="controls"
-                >
-                  <span class="gh-option-bold">Controls</span>
-                </li>
-              </ul>
+                  <span class="gh-select-value">Select</span>
+                  <span class="material-icons">expand_more</span>
+                </button>
+                <ul class="gh-select-options" role="listbox" hidden>
+                  <li class="gh-select-option" role="option" data-value="hvac">
+                    <span class="gh-option-bold">HVAC</span>
+                  </li>
+                  <li
+                    class="gh-select-option"
+                    role="option"
+                    data-value="plumbing"
+                  >
+                    <span class="gh-option-bold">Plumbing</span>
+                  </li>
+                  <li
+                    class="gh-select-option"
+                    role="option"
+                    data-value="electrical"
+                  >
+                    <span class="gh-option-bold">Electrical</span>
+                  </li>
+                  <li
+                    class="gh-select-option"
+                    role="option"
+                    data-value="controls"
+                  >
+                    <span class="gh-option-bold">Controls</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

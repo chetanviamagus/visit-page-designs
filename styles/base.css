@@ -390,7 +390,7 @@ td.gh-table-availability {
 }
 .gh-back-link {
   text-align: center;
-  margin-top: 13px;
+  margin-top: 35px;
 }
 .gh-back-link a {
   color: var(--gh-primary);
@@ -521,7 +521,7 @@ td.gh-table-availability {
   color: #333;
 }
 .gh-label {
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: 500;
   margin-bottom: 0;
   color: #333;
@@ -543,7 +543,7 @@ td.gh-table-availability {
   color: #969696;
   font-size: 14px;
   gap: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 22px;
   cursor: pointer;
   user-select: none;
   transition: color 0.2s;
@@ -556,27 +556,35 @@ td.gh-table-availability {
   outline: 2px solid var(--gh-primary);
 }
 .gh-additional-info-fields {
-  margin-bottom: 1.2rem;
+  margin-bottom: 9px;
   animation: fadeIn 0.2s;
 }
 .gh-additional-info-fields-container {
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  gap: 22px;
+}
+.gh-label-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
 }
 .gh-input,
 .gh-textarea {
   width: 100%;
-  padding: 1rem 1.2rem;
-  font-size: 1.08rem;
-  border: 1.5px solid #bfc7d1;
-  border-radius: 0.4rem;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #333;
+  border-radius: 4px;
   background: #fff;
   color: #222;
   font-family: 'Roboto', var(--gh-font);
+  box-sizing: border-box;
 }
 .gh-textarea {
   resize: vertical;
+  min-height: 106px;
+  box-sizing: border-box;
 }
 .gh-char-count {
   font-size: 0.95rem;

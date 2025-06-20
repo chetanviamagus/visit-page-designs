@@ -135,22 +135,22 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
       const allCheckboxes = options.querySelectorAll('.gh-checkbox');
       const noneCheckbox = options.querySelector('.gh-rep-none');
       const otherCheckboxes = Array.from(allCheckboxes).filter(
-        cb => !cb.classList.contains('gh-rep-none')
+        (cb) => !cb.classList.contains('gh-rep-none')
       );
       if (noneCheckbox.checked) {
-        otherCheckboxes.forEach(cb => {
+        otherCheckboxes.forEach((cb) => {
           cb.checked = false;
           cb.disabled = true;
         });
-      } else if (otherCheckboxes.some(cb => cb.checked)) {
+      } else if (otherCheckboxes.some((cb) => cb.checked)) {
         noneCheckbox.checked = false;
         noneCheckbox.disabled = true;
-        otherCheckboxes.forEach(cb => {
+        otherCheckboxes.forEach((cb) => {
           cb.disabled = false;
         });
       } else {
         noneCheckbox.disabled = false;
-        otherCheckboxes.forEach(cb => {
+        otherCheckboxes.forEach((cb) => {
           cb.disabled = false;
         });
       }
@@ -166,9 +166,11 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
         selectedList.appendChild(div);
         return;
       }
-      checked.forEach(cb => {
+      checked.forEach((cb) => {
         if (!cb.classList.contains('gh-rep-none')) {
-          const label = cb.parentElement.querySelector('.gh-option-bold').textContent.trim();
+          const label = cb.parentElement
+            .querySelector('.gh-option-bold')
+            .textContent.trim();
           const div = document.createElement('div');
           div.innerHTML = `${label}<br><span class="gh-add-details">+ Add Details (Optional)</span>`;
           selectedList.appendChild(div);
@@ -176,13 +178,17 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
       });
     }
     function renderSelectedAttendees(expandedIndex) {
-      const selectedLabels = Array.from(options.querySelectorAll('.gh-checkbox:checked')).map(cb =>
+      const selectedLabels = Array.from(
+        options.querySelectorAll('.gh-checkbox:checked')
+      ).map((cb) =>
         cb.parentElement.querySelector('.gh-option-bold').textContent.trim()
       );
-      const selectedValuesArr = Array.from(options.querySelectorAll('.gh-checkbox:checked')).map(
-        cb => cb.closest('.gh-select-option').getAttribute('data-value')
+      const selectedValuesArr = Array.from(
+        options.querySelectorAll('.gh-checkbox:checked')
+      ).map((cb) => cb.closest('.gh-select-option').getAttribute('data-value'));
+      const selectedAttendeesList = document.getElementById(
+        'selected-attendees-list'
       );
-      const selectedAttendeesList = document.getElementById('selected-attendees-list');
       if (selectedAttendeesList) {
         if (selectedLabels.length > 0) {
           selectedAttendeesList.innerHTML =
@@ -225,12 +231,16 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
         }
       }
       // Add event listeners for details toggles
-      Array.from(document.querySelectorAll('.gh-add-details-link')).forEach(link => {
-        link.addEventListener('click', function () {
-          renderSelectedAttendees(Number(link.getAttribute('data-index')));
-          addDetailsCharCountListeners(Number(link.getAttribute('data-index')));
-        });
-      });
+      Array.from(document.querySelectorAll('.gh-add-details-link')).forEach(
+        (link) => {
+          link.addEventListener('click', function () {
+            renderSelectedAttendees(Number(link.getAttribute('data-index')));
+            addDetailsCharCountListeners(
+              Number(link.getAttribute('data-index'))
+            );
+          });
+        }
+      );
       // Add char count listeners if expanded
       if (typeof expandedIndex === 'number') {
         addDetailsCharCountListeners(expandedIndex);
@@ -260,11 +270,15 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
         checkbox.checked = !checkbox.checked;
         updateRepNoneLogic(customSelect, options);
         // Update trigger text
-        const selectedLabels = Array.from(options.querySelectorAll('.gh-checkbox:checked')).map(
-          cb => cb.parentElement.querySelector('.gh-option-bold').textContent.trim()
+        const selectedLabels = Array.from(
+          options.querySelectorAll('.gh-checkbox:checked')
+        ).map((cb) =>
+          cb.parentElement.querySelector('.gh-option-bold').textContent.trim()
         );
         valueSpan.textContent =
-          selectedLabels.length > 0 ? selectedLabels.join(', ') : 'Select attendee name(s)';
+          selectedLabels.length > 0
+            ? selectedLabels.join(', ')
+            : 'Select attendee name(s)';
         if (typeof renderSelectedAttendees === 'function') {
           expandedAttendeeIndex = null;
           renderSelectedAttendees(expandedAttendeeIndex);
@@ -287,7 +301,7 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
         valueSpan.textContent = option.textContent.trim();
         options
           .querySelectorAll('.gh-select-option')
-          .forEach(opt => opt.removeAttribute('aria-selected'));
+          .forEach((opt) => opt.removeAttribute('aria-selected'));
         option.setAttribute('aria-selected', 'true');
         closeDropdown();
       }
@@ -322,14 +336,20 @@ const additionalInfoIcon = additionalInfoToggle
 const additionalInfoLabel = additionalInfoToggle
   ? additionalInfoToggle.querySelector('.gh-additional-info-label')
   : null;
-if (additionalInfoToggle && additionalInfoFields && additionalInfoIcon && additionalInfoLabel) {
+if (
+  additionalInfoToggle &&
+  additionalInfoFields &&
+  additionalInfoIcon &&
+  additionalInfoLabel
+) {
   function setExpanded(expanded) {
     additionalInfoToggle.setAttribute('aria-expanded', expanded);
     additionalInfoFields.hidden = !expanded;
-    additionalInfoIcon.textContent = expanded ? 'remove' : 'add';
+    additionalInfoIcon.textContent = expanded ? 'remove_circle' : 'add_circle';
   }
   function toggleAdditionalInfo() {
-    const expanded = additionalInfoToggle.getAttribute('aria-expanded') === 'true';
+    const expanded =
+      additionalInfoToggle.getAttribute('aria-expanded') === 'true';
     setExpanded(!expanded);
   }
   additionalInfoIcon.addEventListener('click', function (e) {
@@ -341,7 +361,10 @@ if (additionalInfoToggle && additionalInfoFields && additionalInfoIcon && additi
     toggleAdditionalInfo();
   });
   additionalInfoToggle.addEventListener('keydown', function (e) {
-    if (e.target === additionalInfoIcon && (e.key === 'Enter' || e.key === ' ')) {
+    if (
+      e.target === additionalInfoIcon &&
+      (e.key === 'Enter' || e.key === ' ')
+    ) {
       e.preventDefault();
       toggleAdditionalInfo();
     }

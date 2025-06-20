@@ -669,6 +669,8 @@ td.gh-table-availability {
   padding: 0.3rem 0;
   list-style: none;
   font-size: 1.08rem;
+  max-height: 230px;
+  box-sizing: border-box;
 }
 .gh-select-options::-webkit-scrollbar {
   width: 12px;
@@ -697,8 +699,12 @@ td.gh-table-availability {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 0.7rem 1rem;
+  padding: 11px 1rem;
   font-size: 15px;
+}
+.gh-select-option:hover {
+  background: #f6f6f6;
+  cursor: pointer;
 }
 .gh-option-bold {
   font-weight: 700;
@@ -758,9 +764,6 @@ td.gh-table-availability {
 .gh-select-options[data-multiselect],
 .gh-custom-select[data-multiselect] .gh-select-options {
   padding: 0.3rem 0.2rem;
-}
-.gh-select-option {
-  padding: 0.5rem 1rem;
 }
 
 #selected-attendees-list {

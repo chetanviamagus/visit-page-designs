@@ -327,49 +327,37 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
   });
 });
 
-// Additional Account Info Toggle (5.html)
-const additionalInfoToggle = document.getElementById('additional-info-toggle');
-const additionalInfoFields = document.getElementById('additional-info-fields');
-const additionalInfoIcon = additionalInfoToggle
-  ? additionalInfoToggle.querySelector('.gh-toggle-icon')
-  : null;
-const additionalInfoLabel = additionalInfoToggle
-  ? additionalInfoToggle.querySelector('.gh-additional-info-label')
-  : null;
-if (
-  additionalInfoToggle &&
-  additionalInfoFields &&
-  additionalInfoIcon &&
-  additionalInfoLabel
-) {
+// Additional Info Toggle
+document.querySelectorAll('.gh-additional-info-collapsed').forEach((toggle) => {
+  const fields = toggle.nextElementSibling;
+  const icon = toggle.querySelector('.gh-toggle-icon');
+
   function setExpanded(expanded) {
-    additionalInfoToggle.setAttribute('aria-expanded', expanded);
-    additionalInfoFields.hidden = !expanded;
-    additionalInfoIcon.textContent = expanded ? 'remove_circle' : 'add_circle';
+    toggle.setAttribute('aria-expanded', expanded);
+    fields.hidden = !expanded;
+    if (icon) {
+      icon.textContent = expanded
+        ? 'remove_circle_outline'
+        : 'add_circle_outline';
+    }
   }
-  function toggleAdditionalInfo() {
-    const expanded =
-      additionalInfoToggle.getAttribute('aria-expanded') === 'true';
-    setExpanded(!expanded);
+
+  function toggleInfo() {
+    if (toggle.getAttribute('aria-disabled') === 'true') return;
+    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+    setExpanded(!isExpanded);
   }
-  additionalInfoIcon.addEventListener('click', function (e) {
-    e.stopPropagation();
-    toggleAdditionalInfo();
-  });
-  additionalInfoLabel.addEventListener('click', function (e) {
-    e.stopPropagation();
-    toggleAdditionalInfo();
-  });
-  additionalInfoToggle.addEventListener('keydown', function (e) {
-    if (
-      e.target === additionalInfoIcon &&
-      (e.key === 'Enter' || e.key === ' ')
-    ) {
+
+  setExpanded(false); // Initial state
+
+  toggle.addEventListener('click', toggleInfo);
+  toggle.addEventListener('keydown', (e) => {
+    if (e.key === ' ' || e.key === 'Enter') {
       e.preventDefault();
-      toggleAdditionalInfo();
+      toggleInfo();
     }
   });
-}
+});
 
 // Char count for project focus textarea
 const projectFocus = document.getElementById('project-focus');

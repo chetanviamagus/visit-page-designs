@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'HelveticaNeue-Medium';
+  src: url('../assets/font/HelveticaNeueLTStd-Md_0.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HelveticaNeue-Bold';
+  src: url('../assets/font/Helvetica-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 :root {
   --gh-primary: #075697;
   --gh-secondary: #00a8e4;
@@ -422,6 +436,9 @@ td.gh-table-availability {
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .gh-back-link a:hover,
 .gh-back-link a:focus {
@@ -537,12 +554,26 @@ td.gh-table-availability {
   flex-direction: column;
   gap: 6px;
   padding-bottom: 0;
+  margin-bottom: 21px;
 }
 .gh-form-title {
   font-size: 19px;
   font-weight: 700;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
   color: #333;
+  font-family: 'HelveticaNeue-Bold', sans-serif;
+}
+.gh-attendee-from {
+  font-size: 14px;
+  font-family: 'HelveticaNeue-Medium', sans-serif;
+  margin-bottom: -1px;
+}
+.gh-attendee-company {
+  font-family: 'HelveticaNeue-Medium', sans-serif;
+  font-size: 15px;
+}
+.gh-attendee-company-name {
+  font-family: 'HelveticaNeue-Bold', sans-serif;
 }
 .gh-label {
   font-size: 14px;
@@ -768,8 +799,8 @@ td.gh-table-availability {
 }
 
 .gh-add-icon {
-  font-size: 1.2rem;
-  color: #60a5fa;
+  font-size: 15px;
+  color: #969696;
   margin-right: 0.2rem;
   vertical-align: middle;
 }
@@ -796,6 +827,9 @@ td.gh-table-availability {
 
 #selected-attendees-list {
   margin: 1.5rem 0 1.2rem 0;
+}
+#selected-attendees-list:empty {
+  margin: 0;
 }
 .gh-selected-attendees-title {
   font-size: 1.18rem;
@@ -945,5 +979,39 @@ td.gh-table-availability {
 }
 
 .gh-add-not-on-list {
-  margin: 1.2rem 0 0.8rem 0;
+  margin: 0 0 0.8rem 0;
+  color: #969696;
+  font-family: 'HelveticaNeue-Medium', sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.gh-add-not-on-list-text {
+  font-size: 14px;
+  font-family: 'HelveticaNeue-Medium', sans-serif;
+  padding-top: 4px;
+}
+.gh-need-account {
+  margin-top: 2px;
+}
+
+.gh-need-account p {
+  font-weight: 700;
+  font-size: 17px;
+  margin: 0 0 0.5rem 0;
+  font-family: 'HelveticaNeue-Bold', sans-serif;
+}
+
+.gh-need-account a {
+  display: flex;
+  align-items: center;
+  color: var(--gh-primary);
+  text-decoration: none;
+  padding-top: 4px;
+}
+
+.gh-need-account a:hover {
+  text-decoration: none;
+  color: #969696;
 }

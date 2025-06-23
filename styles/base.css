@@ -838,7 +838,7 @@ td.gh-table-availability {
   font-family: 'HelveticaNeue-Bold', sans-serif;
 }
 .gh-selected-attendee {
-  margin-left: 0.5rem;
+  /* margin-left: 0.5rem; */
 }
 .gh-selected-attendee-name {
   font-weight: 700;
@@ -849,6 +849,7 @@ td.gh-table-availability {
 .gh-add-details-link {
   background: none;
   border: none;
+  padding: 4px 0;
   color: #969696;
   font-size: 14px;
   font-family: 'HelveticaNeue-Medium', sans-serif;
@@ -863,10 +864,7 @@ td.gh-table-availability {
 }
 
 .gh-attendee-details-form {
-  background: #f6f7f8;
-  border: 1.5px solid #d1d5db;
-  border-radius: 12px;
-  padding: 2rem 1.5rem;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;

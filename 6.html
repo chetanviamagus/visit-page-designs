@@ -104,8 +104,6 @@
             </li>
           </ul>
         </div>
-        <div id="selected-attendees-list"></div>
-
         <div
           class="gh-additional-info-collapsed"
           id="additional-info-toggle"
@@ -119,9 +117,11 @@
             >add_circle_outline</span
           >
           <span class="gh-additional-info-label"
-            >Additional account information</span
+            >Add an attendee not on the list</span
           >
         </div>
+        <div id="selected-attendees-list"></div>
+
         <div
           class="gh-additional-info-fields"
           id="additional-info-fields"
@@ -210,9 +210,11 @@
         </div>
         <div class="gh-need-account">
           <p>Need to add another account?</p>
-          <a href="#">
-            <span class="material-icons">keyboard_arrow_left</span>
-            Back
+          <a href="#" id="create-account-link-bottom">
+            <span class="material-icons gh-create-icon" aria-hidden="true"
+              >person_add_alt</span
+            >
+            Add another customer account
           </a>
         </div>
       </section>

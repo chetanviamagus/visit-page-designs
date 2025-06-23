@@ -195,14 +195,18 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
             `<div class=\"gh-selected-attendees-title\">Selected Attendees</div>` +
             selectedLabels
               .map(
-                (name, i) =>
-                  `<div class=\"gh-selected-attendee\">
+                (name, i) => {
+                  const isExpanded = expandedIndex === i;
+                  return `<div class=\"gh-selected-attendee\">
                 <span class=\"gh-selected-attendee-name\">${name}</span>
-                <span class=\"gh-add-details-link\" tabindex=\"0\" data-index=\"${i}\">+ Add Details (Optional)</span>
+                <button class=\"gh-add-details-link gh-additional-info-collapsed\" type=\"button\" tabindex=\"0\" aria-expanded=\"${isExpanded}\" aria-controls=\"attendee-details-form-${i}\">
+                  <span class=\"material-icons gh-add-icon gh-toggle-icon\" aria-hidden=\"true\">${isExpanded ? 'remove_circle_outline' : 'add_circle_outline'}</span>
+                  <span class=\"gh-additional-info-label\">Add Details (Optional)</span>
+                </button>
                 ${
-                  expandedIndex === i
+                  isExpanded
                     ? `
-                <form class=\"gh-attendee-details-form\" autocomplete=\"off\">
+                <form class=\"gh-attendee-details-form\" id=\"attendee-details-form-${i}\" autocomplete=\"off\">
                   <label class=\"gh-attendee-details-label\">Job Title</label>
                   <input type=\"text\" class=\"gh-attendee-details-input\" />
                   <label class=\"gh-attendee-details-label\">* Name on Badge (How Attendee name will appear on badge)</label>
@@ -223,7 +227,8 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
                 `
                     : ''
                 }
-              </div>`
+              </div>`;
+                }
               )
               .join('');
         } else {
@@ -232,12 +237,21 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
       }
       // Add event listeners for details toggles
       Array.from(document.querySelectorAll('.gh-add-details-link')).forEach(
-        (link) => {
-          link.addEventListener('click', function () {
-            renderSelectedAttendees(Number(link.getAttribute('data-index')));
-            addDetailsCharCountListeners(
-              Number(link.getAttribute('data-index'))
-            );
+        (btn, i) => {
+          btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+            // If already expanded, collapse; otherwise expand this and collapse others
+            renderSelectedAttendees(isExpanded ? null : Number(i));
+            addDetailsCharCountListeners(Number(i));
+          });
+          btn.addEventListener('keydown', function (e) {
+            if (e.key === ' ' || e.key === 'Enter') {
+              e.preventDefault();
+              const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+              renderSelectedAttendees(isExpanded ? null : Number(i));
+              addDetailsCharCountListeners(Number(i));
+            }
           });
         }
       );

@@ -593,16 +593,15 @@ td.gh-table-availability {
   font-family: 'Roboto', var(--gh-font);
 }
 .gh-additional-info-collapsed {
+  color: #969696;
+  font-size: 15px;
+  font-family: 'HelveticaNeue-Medium', sans-serif;
   display: flex;
   align-items: center;
-  color: #969696;
-  font-size: 14px;
-  gap: 0;
-  margin-bottom: 22px;
+  gap: 6px;
+  /* margin-bottom: 18px; */
   cursor: pointer;
   user-select: none;
-  transition: color 0.2s;
-  margin-top: 6px;
 }
 .gh-additional-info-collapsed[aria-expanded='true'] {
   color: var(--gh-primary);
@@ -671,6 +670,7 @@ td.gh-table-availability {
 .gh-create-icon {
   font-size: 18px;
   color: var(--gh-primary);
+  margin-right: 4px;
 }
 .gh-create-account a {
   color: var(--gh-primary);
@@ -686,6 +686,7 @@ td.gh-table-availability {
 .gh-custom-select {
   width: 100%;
   position: relative;
+  margin-bottom: 10px;
 }
 .gh-select-trigger {
   width: 100%;
@@ -799,10 +800,8 @@ td.gh-table-availability {
 }
 
 .gh-add-icon {
-  font-size: 15px;
+  font-size: 18px;
   color: #969696;
-  margin-right: 0.2rem;
-  vertical-align: middle;
 }
 
 .gh-checkbox-label {
@@ -826,37 +825,41 @@ td.gh-table-availability {
 }
 
 #selected-attendees-list {
-  margin: 1.5rem 0 1.2rem 0;
+  /* margin-bottom: 24px; */
 }
 #selected-attendees-list:empty {
   margin: 0;
 }
 .gh-selected-attendees-title {
-  font-size: 1.18rem;
+  font-size: 20px;
   font-weight: 700;
-  color: #005691;
-  margin-bottom: 1rem;
-  margin-top: 1.5rem;
+  margin-bottom: 18px;
+  margin-top: 18px;
+  font-family: 'HelveticaNeue-Bold', sans-serif;
 }
 .gh-selected-attendee {
   margin-left: 0.5rem;
 }
 .gh-selected-attendee-name {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 16px;
   color: #222;
-  display: block;
+  font-family: 'HelveticaNeue-Bold', sans-serif;
 }
 .gh-add-details-link {
-  color: #60a5fa;
-  font-size: 0.98rem;
-  text-decoration: underline;
-  cursor: pointer;
-  margin-left: 0.2rem;
-  display: inline-block;
+  background: none;
+  border: none;
+  color: #969696;
+  font-size: 14px;
+  font-family: 'HelveticaNeue-Medium', sans-serif;
+  text-decoration: none;
+  margin-left: 0;
+  /* display: block; */
+  margin-bottom: 16px;
 }
 .gh-add-details-link:hover,
 .gh-add-details-link:focus {
-  color: #3b82f6;
+  color: #003e6b;
 }
 
 .gh-attendee-details-form {
@@ -993,7 +996,8 @@ td.gh-table-availability {
   padding-top: 4px;
 }
 .gh-need-account {
-  margin-top: 2px;
+  margin-top: 12px;
+  margin-bottom: 6px;
 }
 
 .gh-need-account p {
@@ -1008,10 +1012,13 @@ td.gh-table-availability {
   align-items: center;
   color: var(--gh-primary);
   text-decoration: none;
-  padding-top: 4px;
+  font-size: 16px;
+  font-family: 'HelveticaNeue-Medium', sans-serif;
+  gap: 4px;
+  margin-top: 2px;
 }
 
 .gh-need-account a:hover {
-  text-decoration: none;
-  color: #969696;
+  text-decoration: underline;
+  color: #003e6b;
 }

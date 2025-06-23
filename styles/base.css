@@ -864,10 +864,9 @@ td.gh-table-availability {
 }
 
 .gh-attendee-details-form {
-  padding: 2rem 0;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 5px;
   max-width: 480px;
   position: relative;
 }

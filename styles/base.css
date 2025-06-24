@@ -742,8 +742,9 @@ input[type='radio'] {
   border-radius: 4px;
   background: #fff;
   color: #333;
-  font-family: 'Roboto', var(--gh-font);
-  box-sizing: border-box;
+  font-family: 'HelveticaNeue-Roman', sans-serif;
+  line-height: 20px;
+  box-sizing: content-box;
 }
 .gh-textarea {
   resize: vertical;
@@ -1002,7 +1003,7 @@ input[type='checkbox'] {
 }
 .gh-label-group {
   width: 100%;
-  margin-bottom: 8px;
+  margin-bottom: 28px;
   gap: 7px;
   display: flex;
   flex-direction: column;
@@ -1156,14 +1157,7 @@ input[type='checkbox'] {
 .gh-travel-form-h3 {
   margin-bottom: 27px;
 }
-.gh-input-mb1 {
-  width: 100%;
-  margin-bottom: 1rem;
-}
-.gh-input-mb2 {
-  width: 100%;
-  margin-bottom: 2rem;
-}
+
 .gh-travel-form-row {
   display: flex;
   gap: 1rem;

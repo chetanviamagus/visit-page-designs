@@ -89,7 +89,7 @@ body {
 }
 .gh-header-title {
   font-size: 38px;
-  font-weight: 500;
+  font-weight: 600;
   color: #57585a;
   font-family: 'Roboto', var(--gh-font);
 }
@@ -125,7 +125,7 @@ body {
 }
 .gh-main-section-title {
   font-size: 36px;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0;
   text-align: left;
   color: #57585a;
@@ -538,10 +538,18 @@ td.gh-table-availability {
   padding-bottom: 0;
   margin-bottom: 21px;
 }
+input[type='radio'] {
+  width: 20px;
+  height: 20px;
+}
+#attendee-radio-group label {
+  display: flex;
+  align-items: flex-end;
+}
 .gh-form-title {
   font-size: 19px;
   font-weight: 700;
-  margin-bottom: 22px;
+  margin-bottom: 15px;
   color: #333;
   font-family: 'HelveticaNeue-Bold', sans-serif;
 }

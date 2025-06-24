@@ -24,23 +24,10 @@
   --gh-font: 'Roboto', Arial, sans-serif;
   --gh-font-bold: 'Roboto', Arial, sans-serif;
 }
-.roboto-500 {
-  font-family: 'Roboto', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-  font-variation-settings: 'wdth' 100;
-}
-.roboto-700 {
-  font-family: 'Roboto', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  font-variation-settings: 'wdth' 100;
-}
+
 body {
   margin: 0;
-  font-family: 'Roboto', var(--gh-font);
+  font-family: 'HelveticaNeue-Medium', sans-serif;
   background: var(--gh-bg);
   color: var(--gh-text);
   min-height: 100vh;
@@ -50,7 +37,6 @@ body {
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
-
 .absolute {
   position: absolute;
 }
@@ -115,7 +101,7 @@ body {
   color: #57585a;
   gap: 8px;
 }
-.gh-user-info .material-icons {
+.gh-user-info .material-symbols-outlined {
   font-size: 16px;
   vertical-align: middle;
 }
@@ -980,7 +966,7 @@ td.gh-table-availability {
   padding: 0;
   line-height: 1;
 }
-.gh-modal-close .material-icons {
+.gh-modal-close .material-symbols-outlined {
   font-size: 2rem;
 }
 

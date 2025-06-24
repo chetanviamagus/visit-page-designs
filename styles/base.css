@@ -649,10 +649,22 @@ td.gh-table-availability {
 input[type='radio'] {
   width: 20px;
   height: 20px;
+  margin: 0;
+  padding: 0;
+}
+.gh-radio-label-text {
+  font-family: 'HelveticaNeue-Bold', sans-serif;
+  font-size: 15px;
+  color: #333;
+  display: inline-block;
+  height: 100%;
+  padding-top: 5px;
+  box-sizing: border-box;
 }
 #attendee-radio-group label {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  gap: 10px;
 }
 .gh-form-title {
   font-size: 19px;

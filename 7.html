@@ -9,15 +9,10 @@
       name="description"
       content="Add rep attendees for your Greenheck customer visit."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
     <link rel="stylesheet" href="styles/base.css" />
   </head>
@@ -53,7 +48,7 @@
           <li class="gh-step">Summary</li>
         </ul>
       </nav>
-      <section class="gh-form-section" style="max-width: 500px; margin: 0 auto">
+      <section class="gh-form-section">
         <h2 class="gh-form-title">Rep Attendee(s)</h2>
         <label class="gh-label" for="rep-attendee-names-select"
           >Add Rep Attendee(s)</label
@@ -106,7 +101,7 @@
           </ul>
         </div>
         <div
-          class="gh-selected-attendees"
+          class="gh-selected-attendees hidden"
           style="margin-top: 2rem; margin-bottom: 2rem"
         >
           <div
@@ -119,18 +114,19 @@
             <!-- Selected attendees will be rendered here by JS -->
           </div>
         </div>
+        <div
+          class="gh-action-buttons"
+          style="justify-content: center; gap: 1.5rem"
+        >
+          <button class="gh-btn gh-btn-outline gh-btn-large" id="save-later">
+            Save &amp; Complete Later
+          </button>
+          <button class="gh-btn gh-btn-table gh-btn-large" id="save-add-travel">
+            Save &amp; Add Travel Info
+          </button>
+        </div>
       </section>
-      <div
-        class="gh-action-buttons"
-        style="justify-content: center; gap: 1.5rem"
-      >
-        <button class="gh-btn gh-btn-outline gh-btn-large" id="save-later">
-          Save &amp; Complete Later
-        </button>
-        <button class="gh-btn gh-btn-table gh-btn-large" id="save-add-travel">
-          Save &amp; Add Travel Info
-        </button>
-      </div>
+
       <div class="gh-back-link">
         <a href="#" id="back-link"
           ><span class="material-symbols-outlined">keyboard_arrow_left</span
@@ -169,7 +165,14 @@
         function renderSelected() {
           const checked = Array.from(options).filter((cb) => cb.checked);
           selectedList.innerHTML = '';
-          if (checked.length === 0) return;
+          const selectedAttendeesSection = document.querySelector(
+            '.gh-selected-attendees'
+          );
+          if (checked.length === 0) {
+            selectedAttendeesSection.classList.add('hidden');
+            return;
+          }
+          selectedAttendeesSection.classList.remove('hidden');
           checked.forEach((cb, idx) => {
             const value = cb
               .closest('.gh-select-option')

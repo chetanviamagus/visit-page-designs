@@ -49,27 +49,16 @@
         </ul>
       </nav>
       <section
-        class="gh-form-section"
-        style="max-width: 1100px; margin: 0 auto"
+        class="gh-form-section gh-form-section-maxwidth gh-form-section-center"
       >
-        <h2 class="gh-form-title" style="text-align: left">
+        <h2 class="gh-form-title gh-form-title-left">
           Add attendee travel information
         </h2>
-        <div style="margin-bottom: 1.5rem">
-          <label class="gh-label" style="font-weight: 500"
+        <div class="gh-form-section-mb">
+          <label class="gh-label gh-label-fw500"
             >Enter travel information for:</label
           >
-          <div
-            id="attendee-radio-group"
-            style="
-              display: grid;
-              grid-template-columns: repeat(4, 1fr);
-              gap: 15px;
-              margin-top: 12px;
-              font-size: 15px;
-              font-weight: 600;
-            "
-          >
+          <div id="attendee-radio-group" class="gh-attendee-radio-group">
             <label
               ><input
                 type="radio"
@@ -109,160 +98,128 @@
             >
           </div>
         </div>
-        <form
-          class="gh-travel-form"
-          autocomplete="off"
-          style="display: flex; gap: 3rem; flex-wrap: wrap"
-        >
+        <form class="gh-travel-form gh-travel-form-flex" autocomplete="off">
           <!-- Left Column -->
-          <div style="flex: 1 1 350px; min-width: 320px">
-            <h3 style="margin-bottom: 1.2rem">Attendee Name</h3>
-            <label class="gh-label">Attendee First Name</label>
-            <input
-              type="text"
-              id="attendee-first-name"
-              class="gh-input"
-              value="Emma"
-              style="width: 100%; margin-bottom: 1rem"
-            />
-            <label class="gh-label">Attendee Last Name</label>
-            <input
-              type="text"
-              id="attendee-last-name"
-              class="gh-input"
-              value="Callaghan"
-              style="width: 100%; margin-bottom: 2rem"
-            />
+          <div class="gh-travel-form-col">
+            <h3 class="gh-travel-form-h3">Attendee Name</h3>
+            <div class="gh-label-input-group">
+              <label class="gh-label" for="attendee-first-name"
+                >Attendee First Name</label
+              >
+              <input
+                type="text"
+                id="attendee-first-name"
+                class="gh-input gh-input-mb1"
+                value="Emma"
+              />
+            </div>
+            <div class="gh-label-input-group">
+              <label class="gh-label" for="attendee-last-name"
+                >Attendee Last Name</label
+              >
+              <input
+                type="text"
+                id="attendee-last-name"
+                class="gh-input gh-input-mb2"
+                value="Callaghan"
+              />
+            </div>
 
-            <h3 style="margin-bottom: 1.2rem">Hotel</h3>
-            <label class="gh-label">Confirmation Number (Hotel)</label>
-            <input
-              type="text"
-              class="gh-input"
-              style="width: 100%; margin-bottom: 1rem"
-            />
-            <div style="display: flex; gap: 1rem">
-              <div style="flex: 1">
-                <label class="gh-label">Hotel Check In (mm/dd/yy)</label>
-                <input
-                  type="text"
-                  class="gh-input"
-                  style="width: 100%; margin-bottom: 1rem"
-                />
+            <h3 class="gh-travel-form-h3">Hotel</h3>
+            <div class="gh-label-input-group">
+              <label class="gh-label">Confirmation Number (Hotel)</label>
+              <input type="text" class="gh-input gh-input-mb1" />
+            </div>
+            <div class="gh-travel-form-row">
+              <div class="gh-travel-form-row-col">
+                <div class="gh-label-input-group">
+                  <label class="gh-label">Hotel Check In (mm/dd/yy)</label>
+                  <input type="text" class="gh-input gh-input-mb1" />
+                </div>
               </div>
-              <div style="flex: 1">
-                <label class="gh-label">Hotel Check Out (mm/dd/yy)</label>
-                <input
-                  type="text"
-                  class="gh-input"
-                  style="width: 100%; margin-bottom: 1rem"
-                />
+              <div class="gh-travel-form-row-col">
+                <div class="gh-label-input-group">
+                  <label class="gh-label">Hotel Check Out (mm/dd/yy)</label>
+                  <input type="text" class="gh-input gh-input-mb1" />
+                </div>
               </div>
             </div>
 
-            <h3 style="margin-bottom: 1.2rem">Driving</h3>
+            <h3 class="gh-travel-form-h3">Driving</h3>
             <label class="gh-label">Are you arriving by car?</label>
-            <div
-              style="
-                display: flex;
-                align-items: center;
-                gap: 1.5rem;
-                margin-bottom: 0.5rem;
-              "
-            >
-              <label style="margin-right: 1em"
+            <div class="gh-driving-radio-group">
+              <label class="gh-driving-radio-label"
                 ><input type="radio" name="driving" value="yes" /> Yes</label
               >
               <label><input type="radio" name="driving" value="no" /> No</label>
             </div>
-            <div style="display: flex; gap: 1rem">
-              <div style="flex: 1">
-                <label class="gh-label">Driving Arrival Date</label>
-                <input
-                  type="text"
-                  class="gh-input"
-                  style="width: 100%; margin-bottom: 1rem"
-                />
+            <div class="gh-travel-form-row">
+              <div class="gh-travel-form-row-col">
+                <div class="gh-label-input-group">
+                  <label class="gh-label">Driving Arrival Date</label>
+                  <input type="text" class="gh-input gh-input-mb1" />
+                </div>
               </div>
-              <div style="flex: 1">
-                <label class="gh-label">Driving Arrival Time</label>
-                <input
-                  type="text"
-                  class="gh-input"
-                  style="width: 100%; margin-bottom: 1rem"
-                />
+              <div class="gh-travel-form-row-col">
+                <div class="gh-label-input-group">
+                  <label class="gh-label">Driving Arrival Time</label>
+                  <input type="text" class="gh-input gh-input-mb1" />
+                </div>
               </div>
             </div>
           </div>
           <!-- Right Column -->
-          <div style="flex: 1 1 350px; min-width: 320px">
-            <h3 style="margin-bottom: 1.2rem">Flight</h3>
-            <label class="gh-label">Arrival Airport</label>
-            <input
-              type="text"
-              class="gh-input"
-              style="width: 100%; margin-bottom: 1rem"
-            />
-            <label class="gh-label">Arrival Airline</label>
-            <input
-              type="text"
-              class="gh-input"
-              style="width: 100%; margin-bottom: 1rem"
-            />
-            <div style="display: flex; gap: 1rem">
-              <div style="flex: 1">
-                <label class="gh-label">Arrival Flight #</label>
-                <input
-                  type="text"
-                  class="gh-input"
-                  style="width: 100%; margin-bottom: 1rem"
-                />
+          <div class="gh-travel-form-col">
+            <h3 class="gh-travel-form-h3">Flight</h3>
+            <div class="gh-label-input-group">
+              <label class="gh-label">Arrival Airport</label>
+              <input type="text" class="gh-input gh-input-mb1" />
+            </div>
+            <div class="gh-label-input-group">
+              <label class="gh-label">Arrival Airline</label>
+              <input type="text" class="gh-input gh-input-mb1" />
+            </div>
+            <div class="gh-travel-form-row">
+              <div class="gh-travel-form-row-col">
+                <div class="gh-label-input-group">
+                  <label class="gh-label">Arrival Flight #</label>
+                  <input type="text" class="gh-input gh-input-mb1" />
+                </div>
               </div>
-              <div style="flex: 1">
-                <label class="gh-label">Arrival Time</label>
-                <input
-                  type="text"
-                  class="gh-input"
-                  style="width: 100%; margin-bottom: 1rem"
-                />
+              <div class="gh-travel-form-row-col">
+                <div class="gh-label-input-group">
+                  <label class="gh-label">Arrival Time</label>
+                  <input type="text" class="gh-input gh-input-mb1" />
+                </div>
               </div>
             </div>
-            <label class="gh-label">Departure Airport</label>
-            <input
-              type="text"
-              class="gh-input"
-              style="width: 100%; margin-bottom: 1rem"
-            />
-            <label class="gh-label">Departure Airline</label>
-            <input
-              type="text"
-              class="gh-input"
-              style="width: 100%; margin-bottom: 1rem"
-            />
-            <div style="display: flex; gap: 1rem">
-              <div style="flex: 1">
-                <label class="gh-label">Departure Flight #</label>
-                <input
-                  type="text"
-                  class="gh-input"
-                  style="width: 100%; margin-bottom: 1rem"
-                />
+            <div class="gh-label-input-group">
+              <label class="gh-label">Departure Airport</label>
+              <input type="text" class="gh-input gh-input-mb1" />
+            </div>
+            <div class="gh-label-input-group">
+              <label class="gh-label">Departure Airline</label>
+              <input type="text" class="gh-input gh-input-mb1" />
+            </div>
+            <div class="gh-travel-form-row">
+              <div class="gh-travel-form-row-col">
+                <div class="gh-label-input-group">
+                  <label class="gh-label">Departure Flight #</label>
+                  <input type="text" class="gh-input gh-input-mb1" />
+                </div>
               </div>
-              <div style="flex: 1">
-                <label class="gh-label">Departure Time</label>
-                <input
-                  type="text"
-                  class="gh-input"
-                  style="width: 100%; margin-bottom: 1rem"
-                />
+              <div class="gh-travel-form-row-col">
+                <div class="gh-label-input-group">
+                  <label class="gh-label">Departure Time</label>
+                  <input type="text" class="gh-input gh-input-mb1" />
+                </div>
               </div>
             </div>
           </div>
         </form>
       </section>
       <div
-        class="gh-action-buttons"
-        style="justify-content: center; gap: 1.5rem; margin-top: 2.5rem"
+        class="gh-action-buttons gh-action-buttons-center gh-action-buttons-gap-lg gh-action-buttons-mt-xl"
       >
         <button
           class="gh-btn gh-btn-table gh-btn-large"
@@ -272,8 +229,7 @@
         </button>
       </div>
       <div
-        class="gh-action-buttons"
-        style="justify-content: center; gap: 1.5rem; margin-top: 1.5rem"
+        class="gh-action-buttons gh-action-buttons-center gh-action-buttons-gap-lg gh-action-buttons-mt-lg"
       >
         <button class="gh-btn gh-btn-outline gh-btn-large" id="save-later">
           Save &amp; Complete Later

@@ -199,10 +199,10 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
                 return `<div class=\"gh-selected-attendee\">
                 <span class=\"gh-selected-attendee-name\">${name}</span>
                 <button class=\"gh-add-details-link gh-additional-info-collapsed\" type=\"button\" tabindex=\"0\" aria-expanded=\"${isExpanded}\" aria-controls=\"attendee-details-form-${i}\">
-                  <span class=\"material-symbols-outlined gh-add-icon gh-toggle-icon\" aria-hidden=\"true\">${
-                    isExpanded ? 'remove_circle' : 'add_circle'
+                  <span class=\"material-symbols-outlined gh-add-icon gh-toggle-icon text-14\" aria-hidden=\"true\">${
+                    isExpanded ? 'remove' : 'add'
                   }</span>
-                 <span class=\"material-symbols-outlined text-14\"> add </span> <span class=\"gh-additional-info-label\">Add Details (Optional)</span>
+                 <span class=\"gh-additional-info-label\">Add Details (Optional)</span>
                 </button>
                 ${
                   isExpanded

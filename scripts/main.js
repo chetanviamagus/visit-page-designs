@@ -208,17 +208,17 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
                   isExpanded
                     ? `
                 <form class=\"gh-attendee-details-form\" id=\"attendee-details-form-${i}\" autocomplete=\"off\">
-                  <label class=\"gh-attendee-details-label\">Job Title</label>
-                  <input type=\"text\" class=\"gh-attendee-details-input\" />
-                  <label class=\"gh-attendee-details-label\">* Name on Badge (How Attendee name will appear on badge)</label>
-                  <input type=\"text\" class=\"gh-attendee-details-input\" required />
-                  <label class=\"gh-attendee-details-label\">Dietary Restrictions/Special Requirements <span class=\"gh-attendee-details-char-count\" id=\"dietary-count-${i}\">0/1200</span></label>
+                  <label class=\"gh-label\">Job Title</label>
+                  <input type=\"text\" class=\"\" />
+                  <label class=\"gh-label\">* Name on Badge (How Attendee name will appear on badge)</label>
+                  <input type=\"text\" class=\"\" required />
+                  <label class=\"gh-label\">Dietary Restrictions/Special Requirements <span class=\"gh-attendee-details-char-count\" id=\"dietary-count-${i}\">0/1200</span></label>
                   <textarea class=\"gh-attendee-details-textarea\" maxlength=\"1200\" id=\"dietary-textarea-${i}\"></textarea>
-                  <label class=\"gh-attendee-details-label\">Comments <span class=\"gh-attendee-details-char-count\" id=\"comments-count-${i}\">0/1200</span></label>
+                  <label class=\"gh-label\">Comments <span class=\"gh-attendee-details-char-count\" id=\"comments-count-${i}\">0/1200</span></label>
                   <textarea class=\"gh-attendee-details-textarea\" maxlength=\"1200\" id=\"comments-textarea-${i}\" placeholder=\"e.g. I'm interested in...\"></textarea>
                   <div class=\"gh-attendee-details-prayer-time\">
                     <div class=\"gh-attendee-details-prayer-time-yn\">
-                      <span class=\"gh-attendee-details-label\">Prayer Time?</span>
+                      <span class=\"gh-label\">Prayer Time?</span>
                     <div class=\"gh-attendee-details-radio-group\">
                       <label class=\"gh-attendee-details-radio\"><input class=\"btn-radio\" type=\"radio\" name=\"prayer-${i}\" value=\"yes\" /> Yes</label>
                       <label class=\"gh-attendee-details-radio\"><input class=\"btn-radio\" type=\"radio\" name=\"prayer-${i}\" value=\"no\" /> No</label>
@@ -226,7 +226,7 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
                     </div>
                     <div class=\"entr-pryr-tm-container\">
                       <span class=\"entr-pryr-tm\">Enter prayer time</span>
-                      <input type=\"text\" class=\"gh-attendee-details-input\" style=\"max-width: 180px;\"  />
+                      <input type=\"text\" class=\"\" style=\"max-width: 180px;\"  />
                     </div>
                    
                   </div>

@@ -100,24 +100,13 @@
             </li>
           </ul>
         </div>
-        <div
-          class="gh-selected-attendees hidden"
-          style="margin-top: 2rem; margin-bottom: 2rem"
-        >
-          <div
-            class="gh-selected-label"
-            style="font-weight: 500; margin-bottom: 0.5rem"
-          >
-            Selected Rep Attendee(s)
-          </div>
+        <div class="gh-selected-attendees hidden">
+          <div class="gh-selected-label">Selected Rep Attendee(s)</div>
           <div class="gh-selected-list" id="selected-rep-list">
             <!-- Selected attendees will be rendered here by JS -->
           </div>
         </div>
-        <div
-          class="gh-action-buttons"
-          style="justify-content: center; gap: 1.5rem"
-        >
+        <div class="gh-action-buttons">
           <button class="gh-btn gh-btn-outline gh-btn-large" id="save-later">
             Save &amp; Complete Later
           </button>
@@ -183,45 +172,55 @@
               selectedList.appendChild(div);
             } else {
               const div = document.createElement('div');
-              div.style.marginBottom = '1.5rem';
+              div.classList.add('gh-selected-attendee');
               div.innerHTML = `
-                <span class=\"gh-selected-attendee-name\">${
+                <div class=\"gh-selected-attendee-name\">${
                   optionLabels[value]
-                }</span><br />
-                <a href=\"#\" class=\"gh-add-details-link\" data-index=\"${idx}\">
-                  <span class=\"material-symbols-outlined text-14\" >${
+                }</div>
+                <a href=\"#\" class=\"gh-add-details-link${
+                  expandedIndex === idx ? ' expanded' : ''
+                }\" data-index=\"${idx}\">
+                  <span class=\"material-symbols-outlined text-14 flex-center\" >${
                     expandedIndex === idx ? 'remove' : 'add'
                   }</span>
-                  ${
-                    expandedIndex === idx
-                      ? 'Hide Details'
-                      : 'Add Details (Optional)'
-                  }
+                  
+<span class=\"gh-additional-info-label\">
+                  Add Details (Optional)</span>
                 </a>
                 ${
                   expandedIndex === idx
                     ? `
-                <form class='gh-attendee-details-form' autocomplete='off' style='margin-top: 1.2rem;'>
-                  <div style='margin-bottom: 0.7rem;'>
-                    <label style='display: flex; align-items: center; gap: 0.5em; font-size: 1em;'><input type='checkbox' class='gh-attendee-details-main-contact' /> Designate as main visit contact</label>
+                <form class='gh-attendee-details-form' autocomplete='off'>
+                  <div class='gh-attendee-details-checkbox-row'>
+                    <label class='gh-attendee-details-checkbox-label'><input name='main-contact' type='checkbox' class='gh-attendee-details-main-contact' /> <span class='gh-attendee-details-checkbox-label-text'>Designate as main visit contact</span></label>
                   </div>
-                  <label class='gh-attendee-details-label'>Mobile Phone Number</label>
-                  <input type='text' class='gh-input gh-attendee-details-input' style='width: 100%; margin-bottom: 1rem;' />
-                  <label class='gh-attendee-details-label'>* Name on Badge (How Attendee name will appear on badge)</label>
-                  <input type='text' class='gh-input gh-attendee-details-input' style='width: 100%; margin-bottom: 1rem;' />
-                  <label class='gh-attendee-details-label'>Dietary Restrictions/Special Requirements <span class='gh-attendee-details-char-count' id='diet-count-${idx}'>0/1200</span></label>
-                  <textarea class='gh-textarea gh-attendee-details-textarea' rows='2' maxlength='1200' style='width: 100%; margin-bottom: 1rem;' data-count-id='diet-count-${idx}'></textarea>
-                  <label class='gh-attendee-details-label'>Comments <span class='gh-attendee-details-char-count' id='comments-count-${idx}'>0/1200</span></label>
-                  <textarea class='gh-textarea gh-attendee-details-textarea' rows='2' maxlength='1200' style='width: 100%; margin-bottom: 1rem;' data-count-id='comments-count-${idx}' placeholder='e.g. I\\'m interested in...'></textarea>
-                  <div style='display: flex; align-items: flex-end; gap: 1.5rem; margin-bottom: 0.7rem;'>
+                  <div class="gh-label-input-group">
+                    <label class='gh-attendee-details-label'>Mobile Phone Number</label>
+                    <input type='text' class='gh-input gh-attendee-details-input' />
+                  </div>
+                  <div class="gh-label-input-group">
+                    <label class='gh-attendee-details-label'>* Name on Badge (How Attendee name will appear on badge)</label>
+                    <input type='text' class='gh-input gh-attendee-details-input' />
+                  </div>
+                  <div class="gh-label-input-group">
+                    <label class='gh-attendee-details-label'>Dietary Restrictions/Special Requirements <span class='gh-attendee-details-char-count' id='diet-count-${idx}'>0/1200</span></label>
+                    <textarea class='gh-textarea gh-attendee-details-textarea' rows='2' maxlength='1200' data-count-id='diet-count-${idx}'></textarea>
+                  </div>
+                  <div class="gh-label-input-group">
+                    <label class='gh-attendee-details-label'>Comments <span class='gh-attendee-details-char-count' id='comments-count-${idx}'>0/1200</span></label>
+                    <textarea class='gh-textarea gh-attendee-details-textarea' rows='2' maxlength='1200' data-count-id='comments-count-${idx}' placeholder='e.g. I\'m interested in...'></textarea>
+                  </div>
+                  <div class='gh-attendee-details-flex-row'>
                     <div>
                       <label class='gh-attendee-details-label'>Prayer Time?</label><br />
-                      <label style='margin-right: 1em;'><input type='radio' name='prayer-time-${idx}' value='yes' class='gh-attendee-details-radio' /> Yes</label>
-                      <label><input type='radio' name='prayer-time-${idx}' value='no' class='gh-attendee-details-radio' /> No</label>
+                      <label class='gh-attendee-details-radio-label'><input type='radio' name='prayer-time-${idx}' value='yes' class='gh-attendee-details-radio' /> Yes</label>
+                      <label class='gh-attendee-details-radio-label'><input type='radio' name='prayer-time-${idx}' value='no' class='gh-attendee-details-radio' /> No</label>
                     </div>
-                    <div style='flex: 1;'>
-                      <label class='gh-attendee-details-label'>Enter prayer time</label>
-                      <input type='text' class='gh-input gh-attendee-details-input' style='width: 100%;' />
+                    <div class='gh-attendee-details-prayer-time-input'>
+                      <div class="gh-label-input-group">
+                        <label class='gh-attendee-details-label'>Enter prayer time</label>
+                        <input type='text' class='gh-input gh-attendee-details-input' />
+                      </div>
                     </div>
                   </div>
                 </form>
@@ -238,9 +237,12 @@
             .forEach((link) => {
               link.onclick = function (e) {
                 e.preventDefault();
-                expandedIndex = parseInt(this.getAttribute('data-index'));
+                const idx = parseInt(this.getAttribute('data-index'));
+                expandedIndex = expandedIndex === idx ? null : idx;
                 renderSelected();
-                addDetailsCharCountListeners(expandedIndex);
+                if (expandedIndex !== null) {
+                  addDetailsCharCountListeners(expandedIndex);
+                }
               };
             });
         }

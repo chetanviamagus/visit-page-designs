@@ -1,15 +1,114 @@
 @font-face {
+  font-family: 'HelveticaNeue-UltraLight';
+  src: url('../assets/font/helvetica-neue-5/HelveticaNeueUltraLight.otf')
+    format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HelveticaNeue-UltraLightItalic';
+  src: url('../assets/font/helvetica-neue-5/HelveticaNeueUltraLightItalic.otf')
+    format('opentype');
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'HelveticaNeue-Thin';
+  src: url('../assets/font/helvetica-neue-5/HelveticaNeueThin.otf')
+    format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HelveticaNeue-ThinItalic';
+  src: url('../assets/font/helvetica-neue-5/HelveticaNeueThinItalic.otf')
+    format('opentype');
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'HelveticaNeue-Light';
+  src: url('../assets/font/helvetica-neue-5/HelveticaNeueLight.otf')
+    format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HelveticaNeue-LightItalic';
+  src: url('../assets/font/helvetica-neue-5/HelveticaNeueLightItalic.otf')
+    format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'HelveticaNeue-Roman';
+  src: url('../assets/font/helvetica-neue-5/HelveticaNeueRoman.otf')
+    format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HelveticaNeue-Italic';
+  src: url('../assets/font/helvetica-neue-5/HelveticaNeueItalic.ttf')
+    format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
   font-family: 'HelveticaNeue-Medium';
-  src: url('../assets/font/HelveticaNeueLTStd-Md_0.otf') format('opentype');
+  src: url('../assets/font/helvetica-neue-5/HelveticaNeueMedium.otf')
+    format('opentype');
   font-weight: 500;
   font-style: normal;
 }
-
+@font-face {
+  font-family: 'HelveticaNeue-MediumItalic';
+  src: url('../assets/font/helvetica-neue-5/HelveticaNeueMediumItalic.otf')
+    format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
 @font-face {
   font-family: 'HelveticaNeue-Bold';
-  src: url('../assets/font/Helvetica-Bold.ttf') format('truetype');
+  src: url('../assets/font/helvetica-neue-5/HelveticaNeueBold.otf')
+    format('opentype');
   font-weight: 700;
   font-style: normal;
+}
+@font-face {
+  font-family: 'HelveticaNeue-BoldItalic';
+  src: url('../assets/font/helvetica-neue-5/HelveticaNeueBoldItalic.otf')
+    format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'HelveticaNeue-Heavy';
+  src: url('../assets/font/helvetica-neue-5/HelveticaNeueHeavy.otf')
+    format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HelveticaNeue-HeavyItalic';
+  src: url('../assets/font/helvetica-neue-5/HelveticaNeueHeavyItalic.otf')
+    format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'HelveticaNeue-Black';
+  src: url('../assets/font/helvetica-neue-5/HelveticaNeueBlack.otf')
+    format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HelveticaNeue-BlackItalic';
+  src: url('../assets/font/helvetica-neue-5/HelveticaNeueBlackItalic.otf')
+    format('opentype');
+  font-weight: 900;
+  font-style: italic;
 }
 
 :root {
@@ -30,11 +129,21 @@ body {
   padding: 0;
   font-family: 'HelveticaNeue-Medium', sans-serif;
 }
+/* .#969696 ADD CLASS
+ */
+.light-gray {
+  color: #969696 !important;
+}
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 .hidden {
   display: none !important;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .absolute {
   position: absolute;
@@ -536,7 +645,6 @@ td.gh-table-availability {
   flex-direction: column;
   gap: 6px;
   padding-bottom: 0;
-  margin-bottom: 21px;
 }
 input[type='radio'] {
   width: 20px;
@@ -648,8 +756,6 @@ input[type='radio'] {
 }
 .gh-additional-info-label {
   font-size: 14px;
-  color: #969696;
-
   padding-top: 5px;
 }
 .gh-create-account {
@@ -828,7 +934,10 @@ input[type='radio'] {
   font-family: 'HelveticaNeue-Bold', sans-serif;
 }
 .gh-selected-attendees {
-  margin: 6px 0 0 0;
+  margin: 3px 0 0 0;
+}
+.gh-selected-list {
+  margin-top: 16px;
 }
 .gh-selected-label {
   font-size: 19px;
@@ -839,108 +948,65 @@ input[type='radio'] {
   color: #333;
   font-family: 'HelveticaNeue-Bold', sans-serif;
 }
+.gh-add-details-link.expanded {
+  color: #333 !important;
+}
 .gh-add-details-link {
   background: none;
   border: none;
-  padding: 4px 0;
+  margin: 7px 0;
   color: #969696;
   font-size: 14px;
   font-family: 'HelveticaNeue-Medium', sans-serif;
   text-decoration: none;
   margin-left: 0;
-  /* display: block; */
+  display: flex;
   margin-bottom: 16px;
 }
 .gh-add-details-link:hover,
 .gh-add-details-link:focus {
   color: #003e6b;
 }
-
-.gh-attendee-details-form {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  max-width: 480px;
-  position: relative;
+/* input radio style element like input{} */
+input[type='checkbox'] {
+  margin: 0;
 }
-.gh-attendee-details-label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #333;
-
-  margin-bottom: 0.2rem;
+.gh-attendee-details-form {
   margin-top: 1.2rem;
 }
-.gh-attendee-details-label:first-child {
-  margin-top: 0;
+.gh-attendee-details-checkbox-row {
+  margin-bottom: 0.7rem;
+}
+.gh-attendee-details-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 13px;
+  color: #333;
+  font-family: 'HelveticaNeue-Roman', sans-serif;
+}
+.gh-attendee-details-checkbox-label-text {
+  padding-top: 3px;
+}
+.gh-attendee-details-input {
+  width: 100%;
+  margin-bottom: 1rem;
 }
 .gh-attendee-details-textarea {
-  min-height: 100px;
+  width: 100%;
+  margin-bottom: 1rem;
 }
-.gh-attendee-details-input,
-.gh-attendee-details-textarea {
-  /* width: 100%; */
-  padding: 10px 1.2rem;
-  font-size: 1rem;
-  border: 1px solid rgba(51, 51, 51, 1);
-  border-radius: 0.4rem;
-  background: #fff;
-  color: #333;
-  font-family: 'Roboto', var(--gh-font);
-}
-.gh-attendee-details-char-count {
-  font-size: 0.95rem;
-  color: #888;
-  font-weight: 400;
-  position: absolute;
-  right: 1.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.gh-attendee-details-radio-group {
+.gh-attendee-details-flex-row {
   display: flex;
-  align-items: center;
-  gap: 50px;
-  margin-bottom: 0.5rem;
+  align-items: flex-end;
+  gap: 1.5rem;
+  margin-bottom: 0.7rem;
 }
-.gh-attendee-details-radio {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 15px;
+.gh-attendee-details-prayer-time-input {
+  flex: 1;
 }
-.gh-attendee-details-prayer-time {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  margin-top: 12px;
-}
-.gh-attendee-details-prayer-time-yn {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.entr-pryr-tm {
-  font-size: 14px;
-  font-weight: 600;
-}
-.entr-pryr-tm-container {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
-.btn-radio {
-  width: 20px;
-  height: 20px;
-}
-.gh-select-option[data-value='none'] .gh-option-bold {
-  font-weight: 700;
-  color: #333;
-}
-.gh-select-option[data-value='none'] {
-  margin-bottom: 0.3rem;
+.gh-attendee-details-radio-label {
+  margin-right: 1em;
 }
 
 .gh-modal {

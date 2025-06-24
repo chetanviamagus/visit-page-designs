@@ -194,13 +194,14 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
           selectedAttendeesList.innerHTML =
             `<div class=\"gh-selected-attendees-title\">Selected Attendees</div>` +
             selectedLabels
-              .map(
-                (name, i) => {
-                  const isExpanded = expandedIndex === i;
-                  return `<div class=\"gh-selected-attendee\">
+              .map((name, i) => {
+                const isExpanded = expandedIndex === i;
+                return `<div class=\"gh-selected-attendee\">
                 <span class=\"gh-selected-attendee-name\">${name}</span>
                 <button class=\"gh-add-details-link gh-additional-info-collapsed\" type=\"button\" tabindex=\"0\" aria-expanded=\"${isExpanded}\" aria-controls=\"attendee-details-form-${i}\">
-                  <span class=\"material-icons gh-add-icon gh-toggle-icon\" aria-hidden=\"true\">${isExpanded ? 'remove_circle_outline' : 'add_circle_outline'}</span>
+                  <span class=\"material-icons gh-add-icon gh-toggle-icon\" aria-hidden=\"true\">${
+                    isExpanded ? 'remove_circle' : 'add_circle'
+                  }</span>
                   <span class=\"gh-additional-info-label\">Add Details (Optional)</span>
                 </button>
                 ${
@@ -228,8 +229,7 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
                     : ''
                 }
               </div>`;
-                }
-              )
+              })
               .join('');
         } else {
           selectedAttendeesList.innerHTML = '';

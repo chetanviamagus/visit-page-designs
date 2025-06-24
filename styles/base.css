@@ -593,7 +593,7 @@ td.gh-table-availability {
   font-size: 15px;
   font-family: 'HelveticaNeue-Medium', sans-serif;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 6px;
   /* margin-bottom: 18px; */
   cursor: pointer;
@@ -912,12 +912,18 @@ td.gh-table-availability {
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  font-size: 1rem;
+  font-size: 15px;
 }
 .gh-attendee-details-prayer-time {
   display: flex;
   align-items: center;
   gap: 1.2rem;
+  margin-top: 12px;
+}
+.gh-attendee-details-prayer-time-yn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .gh-select-option[data-value='none'] .gh-option-bold {

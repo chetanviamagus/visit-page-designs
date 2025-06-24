@@ -217,10 +217,12 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
                   <label class=\"gh-attendee-details-label\">Comments <span class=\"gh-attendee-details-char-count\" id=\"comments-count-${i}\">0/1200</span></label>
                   <textarea class=\"gh-attendee-details-textarea\" maxlength=\"1200\" id=\"comments-textarea-${i}\" placeholder=\"e.g. I'm interested in...\"></textarea>
                   <div class=\"gh-attendee-details-prayer-time\">
-                    <span class=\"gh-attendee-details-label\">Prayer Time?</span>
+                    <div class=\"gh-attendee-details-prayer-time-yn\">
+                      <span class=\"gh-attendee-details-label\">Prayer Time?</span>
                     <div class=\"gh-attendee-details-radio-group\">
                       <label class=\"gh-attendee-details-radio\"><input type=\"radio\" name=\"prayer-${i}\" value=\"yes\" /> Yes</label>
                       <label class=\"gh-attendee-details-radio\"><input type=\"radio\" name=\"prayer-${i}\" value=\"no\" /> No</label>
+                    </div>
                     </div>
                     <input type=\"text\" class=\"gh-attendee-details-input\" style=\"max-width: 180px;\" placeholder=\"Enter prayer time\" />
                   </div>

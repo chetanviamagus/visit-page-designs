@@ -220,11 +220,15 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
                     <div class=\"gh-attendee-details-prayer-time-yn\">
                       <span class=\"gh-attendee-details-label\">Prayer Time?</span>
                     <div class=\"gh-attendee-details-radio-group\">
-                      <label class=\"gh-attendee-details-radio\"><input type=\"radio\" name=\"prayer-${i}\" value=\"yes\" /> Yes</label>
-                      <label class=\"gh-attendee-details-radio\"><input type=\"radio\" name=\"prayer-${i}\" value=\"no\" /> No</label>
+                      <label class=\"gh-attendee-details-radio\"><input class=\"btn-radio\" type=\"radio\" name=\"prayer-${i}\" value=\"yes\" /> Yes</label>
+                      <label class=\"gh-attendee-details-radio\"><input class=\"btn-radio\" type=\"radio\" name=\"prayer-${i}\" value=\"no\" /> No</label>
                     </div>
                     </div>
-                    <input type=\"text\" class=\"gh-attendee-details-input\" style=\"max-width: 180px;\" placeholder=\"Enter prayer time\" />
+                    <div class=\"entr-pryr-tm-container\">
+                      <span class=\"entr-pryr-tm\">Enter prayer time</span>
+                      <input type=\"text\" class=\"gh-attendee-details-input\" style=\"max-width: 180px;\"  />
+                    </div>
+                   
                   </div>
                 </form>
                 `

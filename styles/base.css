@@ -903,7 +903,7 @@ td.gh-table-availability {
 .gh-attendee-details-prayer-time {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 50px;
   margin-top: 12px;
 }
 .gh-attendee-details-prayer-time-yn {
@@ -911,7 +911,19 @@ td.gh-table-availability {
   flex-direction: column;
   gap: 10px;
 }
-
+.entr-pryr-tm {
+  font-size: 14px;
+  font-weight: 600;
+}
+.entr-pryr-tm-container {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.btn-radio {
+  width: 20px;
+  height: 20px;
+}
 .gh-select-option[data-value='none'] .gh-option-bold {
   font-weight: 700;
   color: #222;

@@ -129,8 +129,12 @@ body {
   padding: 0;
   font-family: 'HelveticaNeue-Medium', sans-serif;
 }
-/* .#969696 ADD CLASS
- */
+.w-auto {
+  width: auto !important;
+}
+.flex-1 {
+  flex: 1 !important;
+}
 .light-gray {
   color: #969696 !important;
 }
@@ -181,13 +185,13 @@ body {
   font-weight: 700;
   color: var(--gh-primary);
   letter-spacing: 1px;
-  font-family: 'Roboto', var(--gh-font);
+  font-family: 'HelveticaNeue-Medium', sans-serif;
 }
 .gh-logo-tagline {
   font-size: 1rem;
   color: #007a53;
   font-weight: 400;
-  font-family: 'Roboto', var(--gh-font);
+  font-family: 'HelveticaNeue-Medium', sans-serif;
 }
 .gh-header-right {
   display: flex;
@@ -200,7 +204,7 @@ body {
   font-size: 38px;
   font-weight: 600;
   color: #57585a;
-  font-family: 'Roboto', var(--gh-font);
+  font-family: 'HelveticaNeue-Medium', sans-serif;
 }
 .gh-user-info {
   display: flex;
@@ -229,7 +233,7 @@ body {
   font-weight: 400;
   margin-bottom: 0.5rem;
   text-align: left;
-  font-family: 'Roboto', var(--gh-font);
+  font-family: 'HelveticaNeue-Medium', sans-serif;
   color: #444;
 }
 .gh-main-section-title {
@@ -238,14 +242,14 @@ body {
   margin: 0;
   text-align: left;
   color: #57585a;
-  font-family: 'Roboto', var(--gh-font);
+  font-family: 'HelveticaNeue-Medium', sans-serif;
 }
 .gh-main-desc {
   font-size: 22px;
   color: #57585a;
   margin: 10px 0 32px 0;
   text-align: left;
-  font-family: 'Roboto', var(--gh-font);
+  font-family: 'HelveticaNeue-Medium', sans-serif;
 }
 .gh-cards {
   display: flex;
@@ -277,12 +281,12 @@ body {
   font-size: 1.4rem;
   font-weight: 500;
   margin: 0 0 0.5rem 0;
-  font-family: 'Roboto', var(--gh-font);
+  font-family: 'HelveticaNeue-Medium', sans-serif;
 }
 .gh-card p {
   font-size: 18px;
   margin: 0 0 28px 0;
-  font-family: 'Roboto', var(--gh-font);
+  font-family: 'HelveticaNeue-Medium', sans-serif;
 }
 .gh-btn {
   padding: 0.7rem 2rem;
@@ -294,7 +298,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
-  font-family: 'Roboto', var(--gh-font);
+  font-family: 'HelveticaNeue-Medium', sans-serif;
 }
 .gh-card-secondary .gh-btn {
   color: var(--gh-primary);
@@ -387,13 +391,41 @@ body {
   overflow-x: auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
+
+.gh-table-medium {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'HelveticaNeue-Medium', sans-serif;
+  background: #fff;
+  margin-bottom: 11px;
+}
+.gh-table-medium td {
+  padding: 13px 20px;
+  text-align: left;
+  font-size: 15px;
+  border-bottom: 1px solid #979797;
+  color: #333;
+  background: #fff;
+}
+.gh-table-medium tr {
+  border: 1px solid #979797;
+}
+.gh-table-medium th {
+  background: var(--gh-primary);
+  text-align: left;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 11px 20px;
+  border-bottom: 2px solid #e5e7eb;
+  position: relative;
+}
 .gh-table {
   width: 100%;
   border-collapse: collapse;
-  font-family: 'Roboto', var(--gh-font);
+  font-family: 'HelveticaNeue-Medium', sans-serif;
   background: #fff;
 }
-
 .gh-table td {
   padding: 30px 20px;
   text-align: left;
@@ -495,7 +527,7 @@ td.gh-table-availability {
   font-weight: 500;
   cursor: pointer;
   transition: background 0.2s;
-  font-family: 'Roboto', var(--gh-font);
+  font-family: 'HelveticaNeue-Medium', sans-serif;
 }
 .gh-btn-edit:hover,
 .gh-btn-edit:focus {
@@ -511,7 +543,7 @@ td.gh-table-availability {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin: 25px auto 0 auto;
+  margin: 18px auto 0 auto;
 }
 .gh-btn-large {
   padding: 10px 30px;
@@ -610,6 +642,12 @@ td.gh-table-availability {
   background: #969696;
   color: #fff;
 }
+.gh-step-current {
+  background: var(--gh-primary);
+  color: #fff;
+  font-weight: 500;
+  z-index: 1;
+}
 @media (max-width: 1024px) {
   .gh-step {
     font-size: 1rem;
@@ -661,6 +699,11 @@ input[type='radio'] {
   padding-top: 5px;
   box-sizing: border-box;
 }
+.gh-radio-label-text-yn {
+  font-family: 'HelveticaNeue-Roman', sans-serif;
+  font-size: 15px;
+  color: #333;
+}
 #attendee-radio-group label {
   display: flex;
   align-items: center;
@@ -669,7 +712,7 @@ input[type='radio'] {
 .gh-form-title {
   font-size: 19px;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 13px;
   color: #333;
   font-family: 'HelveticaNeue-Bold', sans-serif;
 }
@@ -685,12 +728,7 @@ input[type='radio'] {
 .gh-attendee-company-name {
   font-family: 'HelveticaNeue-Bold', sans-serif;
 }
-.gh-label {
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 0;
-  color: #333;
-}
+
 .gh-select {
   width: 100%;
   padding: 0.7rem 1rem;
@@ -700,7 +738,7 @@ input[type='radio'] {
   background: #fff;
   color: #333;
   margin-bottom: 0.5rem;
-  font-family: 'Roboto', var(--gh-font);
+  font-family: 'HelveticaNeue-Medium', sans-serif;
 }
 .gh-additional-info-collapsed {
   color: #969696;
@@ -730,12 +768,15 @@ input[type='radio'] {
 }
 .gh-label {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   gap: 7px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 0;
+  color: #333;
 }
 .gh-input,
 .gh-textarea {
-  width: 100%;
   padding: 10px 20px;
   font-size: 16px;
   border: 1px solid #333;
@@ -752,10 +793,9 @@ input[type='radio'] {
   box-sizing: border-box;
 }
 .gh-char-count {
-  font-size: 0.95rem;
-  color: #888;
-  font-weight: 400;
-  float: right;
+  font-size: 14px;
+  color: #333;
+  font-family: 'HelveticaNeue-Roman', sans-serif;
 }
 @keyframes fadeIn {
   from {
@@ -813,7 +853,7 @@ input[type='radio'] {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  font-family: 'Roboto', var(--gh-font);
+  font-family: 'HelveticaNeue-Medium', sans-serif;
   font-size: 16px;
   transition: border-radius 0.15s, box-shadow 0.15s;
   padding: 8px 14px;
@@ -821,8 +861,8 @@ input[type='radio'] {
 .gh-custom-select[aria-expanded='true'] .gh-select-trigger {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
   border-bottom: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
   z-index: 11;
@@ -983,14 +1023,19 @@ input[type='radio'] {
 /* input radio style element like input{} */
 input[type='checkbox'] {
   margin: 0;
+  width: 20px;
+  height: 20px;
 }
-.gh-attendee-details-form {
+.gh-details-form {
   margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
-.gh-attendee-details-checkbox-row {
+.gh-checkbox-row {
   margin-bottom: 0.7rem;
 }
-.gh-attendee-details-checkbox-label {
+.gh-checkbox-label {
   display: flex;
   align-items: center;
   gap: 0.5em;
@@ -998,12 +1043,12 @@ input[type='checkbox'] {
   color: #333;
   font-family: 'HelveticaNeue-Roman', sans-serif;
 }
-.gh-attendee-details-checkbox-label-text {
+.gh-checkbox-label-text {
   padding-top: 3px;
 }
 .gh-label-group {
   width: 100%;
-  margin-bottom: 28px;
+  margin-bottom: 0;
   gap: 7px;
   display: flex;
   flex-direction: column;
@@ -1012,19 +1057,23 @@ input[type='checkbox'] {
   width: 100%;
   margin-bottom: 1rem;
 }
-.gh-attendee-details-flex-row {
+.gh-flex-row {
   display: flex;
   align-items: flex-end;
   gap: 1.5rem;
   margin-bottom: 0.7rem;
 }
-.gh-attendee-details-prayer-time-input {
-  flex: 1;
+.gh-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-.gh-attendee-details-radio-label {
-  margin-right: 1em;
+.gh-radio-label-yn-container {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
 }
-
 .gh-modal {
   position: fixed;
   top: 0;
@@ -1073,6 +1122,18 @@ input[type='checkbox'] {
 }
 .gh-modal-close .material-symbols-outlined {
   font-size: 2rem;
+}
+.modal-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  margin-top: 35px;
+  margin-bottom: 25px;
+}
+.gh-form-modal-title {
+  font-size: 19px;
+  font-family: 'HelveticaNeue-Bold', sans-serif;
+  color: #333;
 }
 
 .gh-add-not-on-list {
@@ -1123,7 +1184,7 @@ input[type='checkbox'] {
 
 /* Travel Info Form Layout Utility Classes */
 .gh-form-section-maxwidth {
-  max-width: 1100px;
+  max-width: 1005px;
 }
 .gh-form-section-center {
   margin: 0 auto;
@@ -1132,7 +1193,7 @@ input[type='checkbox'] {
   text-align: left;
 }
 .gh-form-section-mb {
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
 }
 .gh-label-fw500 {
   font-weight: 500;
@@ -1147,15 +1208,19 @@ input[type='checkbox'] {
 }
 .gh-travel-form-flex {
   display: flex;
-  gap: 3rem;
+  gap: 66px;
   flex-wrap: wrap;
 }
 .gh-travel-form-col {
-  flex: 1 1 350px;
-  min-width: 320px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  justify-content: space-between;
 }
 .gh-travel-form-h3 {
-  margin-bottom: 27px;
+  margin-bottom: 0;
+  margin-top: 12px;
 }
 
 .gh-travel-form-row {
@@ -1186,4 +1251,102 @@ input[type='checkbox'] {
 }
 .gh-action-buttons-mt-lg {
   margin-top: 1.5rem;
+}
+
+.gh-text-right {
+  text-align: right;
+}
+.gh-mb-0-5 {
+  margin-bottom: 0.5rem;
+}
+.gh-mb-1-5 {
+  margin-bottom: 1.5rem;
+}
+.gh-mb-2-5 {
+  margin-bottom: 2.5rem;
+}
+.gh-mb-2-5-top {
+  margin: 2.5rem 0 0 0;
+}
+.gh-flex {
+  display: flex;
+}
+.gh-flex-wrap {
+  flex-wrap: wrap;
+}
+.gh-gap-2 {
+  gap: 2rem;
+}
+.gh-gap-1-5 {
+  gap: 1.5rem;
+}
+.gh-flex-between {
+  justify-content: space-between;
+}
+.gh-align-end {
+  align-items: flex-end;
+}
+.gh-w-100 {
+  width: 100%;
+}
+.gh-fw-600 {
+  font-weight: 600;
+}
+.gh-color-primary {
+  color: #005691;
+}
+.gh-color-green {
+  color: #009e3c;
+}
+.gh-color-red {
+  color: #e53935;
+}
+.gh-underline {
+  text-decoration: underline;
+}
+.gh-fs-0-95em {
+  font-size: 0.95em;
+}
+.gh-mr-1em {
+  margin-right: 1em;
+}
+.gh-mt-0 {
+  margin-top: 0;
+}
+.gh-mb-2rem {
+  margin-bottom: 2rem;
+}
+.gh-mb-1-5rem {
+  margin-bottom: 1.5rem;
+}
+.gh-mb-0-7rem {
+  margin-bottom: 0.7rem;
+}
+.gh-maxw-1246 {
+  max-width: 1246px;
+  margin: 0 auto;
+}
+.gh-w-120px {
+  width: 120px;
+}
+.gh-float-right {
+  float: right;
+}
+.gh-align-middle {
+  vertical-align: middle;
+}
+
+.gh-rep-attendee-name {
+  font-size: 15px;
+  color: #333;
+  font-family: 'HelveticaNeue-Bold', sans-serif;
+}
+
+#driving-arrival-date-label,
+#driving-arrival-time-label {
+  color: #d6d6d6;
+}
+
+.gh-input:disabled {
+  border-color: #dddddd;
 }

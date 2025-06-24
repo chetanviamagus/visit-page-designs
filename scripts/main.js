@@ -207,28 +207,33 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
                 ${
                   isExpanded
                     ? `
-                <form class=\"gh-attendee-details-form\" id=\"attendee-details-form-${i}\" autocomplete=\"off\">
+                <form class=\"gh-details-form\" id=\"attendee-details-form-${i}\" autocomplete=\"off\">
                   <label class=\"gh-label\">Job Title</label>
-                  <input type=\"text\" class=\"\" />
+                  <input type=\"text\" class=\"gh-input\" />
                   <label class=\"gh-label\">* Name on Badge (How Attendee name will appear on badge)</label>
-                  <input type=\"text\" class=\"\" required />
+                  <input type=\"text\" class=\"gh-input\" required />
                   <label class=\"gh-label\">Dietary Restrictions/Special Requirements <span class=\"gh-attendee-details-char-count\" id=\"dietary-count-${i}\">0/1200</span></label>
-                  <textarea class=\"gh-attendee-details-textarea\" maxlength=\"1200\" id=\"dietary-textarea-${i}\"></textarea>
+                  <textarea class=\"gh-textarea gh-attendee-details-textarea\" maxlength=\"1200\" id=\"dietary-textarea-${i}\"></textarea>
                   <label class=\"gh-label\">Comments <span class=\"gh-attendee-details-char-count\" id=\"comments-count-${i}\">0/1200</span></label>
-                  <textarea class=\"gh-attendee-details-textarea\" maxlength=\"1200\" id=\"comments-textarea-${i}\" placeholder=\"e.g. I'm interested in...\"></textarea>
-                  <div class=\"gh-attendee-details-prayer-time\">
-                    <div class=\"gh-attendee-details-prayer-time-yn\">
-                      <span class=\"gh-label\">Prayer Time?</span>
-                    <div class=\"gh-attendee-details-radio-group\">
-                      <label class=\"gh-attendee-details-radio\"><input class=\"btn-radio\" type=\"radio\" name=\"prayer-${i}\" value=\"yes\" /> Yes</label>
-                      <label class=\"gh-attendee-details-radio\"><input class=\"btn-radio\" type=\"radio\" name=\"prayer-${i}\" value=\"no\" /> No</label>
+                  <textarea class=\"gh-textarea gh-attendee-details-textarea\" maxlength=\"1200\" id=\"comments-textarea-${i}\" placeholder=\"e.g. I'm interested in...\"></textarea>
+                  <div class='gh-flex-row'>
+                    <div class='gh-label-group w-auto' role='radiogroup' aria-labelledby='prayer-time-label-${i}'>
+                      <label class='gh-label' id='prayer-time-label-${i}' for='prayer-time-yes-${i}'><span>Prayer Time?</span></label>
+                      <div class="gh-radio-label-yn-container">
+                        <label class='gh-radio-label' for='prayer-time-yes-${i}'>
+                          <input type='radio' id='prayer-time-yes-${i}' name='prayer-time-${i}' value='yes' class='gh-radio' aria-checked='false' aria-labelledby='prayer-time-label-${i} prayer-time-yes-label-${i}' />
+                          <span class='gh-radio-label-text-yn' id='prayer-time-yes-label-${i}'>Yes</span>
+                        </label>
+                        <label class='gh-radio-label' for='prayer-time-no-${i}'>
+                          <input type='radio' id='prayer-time-no-${i}' name='prayer-time-${i}' value='no' class='gh-radio' aria-checked='false' aria-labelledby='prayer-time-label-${i} prayer-time-no-label-${i}' />
+                          <span class='gh-radio-label-text-yn' id='prayer-time-no-label-${i}'>No</span>
+                        </label>
+                      </div>
                     </div>
+                    <div class="gh-label-group flex-1">
+                      <label class='gh-label' for='prayer-time-input-${i}'><span>Enter prayer time</span></label>
+                      <input type='text' id='prayer-time-input-${i}' class='gh-input' aria-label='Enter prayer time' />
                     </div>
-                    <div class=\"entr-pryr-tm-container\">
-                      <span class=\"entr-pryr-tm\">Enter prayer time</span>
-                      <input type=\"text\" class=\"\" style=\"max-width: 180px;\"  />
-                    </div>
-                   
                   </div>
                 </form>
                 `
@@ -266,16 +271,16 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
         addDetailsCharCountListeners(expandedIndex);
       }
     }
-    function addDetailsCharCountListeners(idx) {
-      const dietary = document.getElementById(`dietary-textarea-${idx}`);
-      const dietaryCount = document.getElementById(`dietary-count-${idx}`);
+    function addDetailsCharCountListeners(i) {
+      const dietary = document.getElementById(`dietary-textarea-${i}`);
+      const dietaryCount = document.getElementById(`dietary-count-${i}`);
       if (dietary && dietaryCount) {
         dietary.addEventListener('input', function () {
           dietaryCount.textContent = `${dietary.value.length}/1200`;
         });
       }
-      const comments = document.getElementById(`comments-textarea-${idx}`);
-      const commentsCount = document.getElementById(`comments-count-${idx}`);
+      const comments = document.getElementById(`comments-textarea-${i}`);
+      const commentsCount = document.getElementById(`comments-count-${i}`);
       if (comments && commentsCount) {
         comments.addEventListener('input', function () {
           commentsCount.textContent = `${comments.value.length}/1200`;
@@ -400,4 +405,54 @@ if (saveReviewSummaryBtn) {
   saveReviewSummaryBtn.addEventListener('click', function () {
     window.location.href = '9.html';
   });
+}
+
+function setupDrivingFieldsToggle() {
+  const dateLabel = document.getElementById('driving-arrival-date-label');
+  const timeLabel = document.getElementById('driving-arrival-time-label');
+  const dateInput = document.getElementById('driving-arrival-date-input');
+  const timeInput = document.getElementById('driving-arrival-time-input');
+  const yesRadio = document.getElementById('driving-yes');
+  const noRadio = document.getElementById('driving-no');
+  if (
+    !dateLabel ||
+    !timeLabel ||
+    !dateInput ||
+    !timeInput ||
+    !yesRadio ||
+    !noRadio
+  ) {
+    return;
+  }
+  function setDrivingFields(enabled) {
+    if (enabled) {
+      dateLabel.style.color = '#303028';
+      timeLabel.style.color = '#303028';
+      dateInput.disabled = false;
+      timeInput.disabled = false;
+    } else {
+      dateLabel.style.color = '#D6D6D6';
+      timeLabel.style.color = '#D6D6D6';
+      dateInput.disabled = true;
+      timeInput.disabled = true;
+    }
+  }
+  // Set default state
+  setDrivingFields(false);
+  yesRadio.addEventListener('change', function () {
+    if (this.checked) {
+      setDrivingFields(true);
+    }
+  });
+  noRadio.addEventListener('change', function () {
+    if (this.checked) {
+      setDrivingFields(false);
+    }
+  });
+}
+// Run on DOMContentLoaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupDrivingFieldsToggle);
+} else {
+  setupDrivingFieldsToggle();
 }

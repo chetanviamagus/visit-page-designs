@@ -130,6 +130,10 @@ body {
   font-family: 'HelveticaNeue-Medium', sans-serif;
   font-weight: 500;
 }
+.gh-font-helvetica-neue-roman {
+  font-family: 'HelveticaNeue-Roman', sans-serif;
+  font-weight: 400;
+}
 .w-auto {
   width: auto !important;
 }
@@ -414,29 +418,48 @@ body {
   font-weight: 500;
   background: #fff;
   margin-bottom: 11px;
+  border-bottom: 1px solid #979797;
 }
 .gh-table-medium thead tr {
   border: 1px solid #075697;
 }
 .gh-table-medium td {
-  padding: 13px 20px;
+  vertical-align: baseline;
+  padding: 11px 20px 9px 20px;
   text-align: left;
   font-size: 15px;
-  border-bottom: 1px solid #979797;
   color: #333;
-  background: #fff;
+  line-height: 24px;
+}
+.gh-table-medium td a {
+  color: #075697;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'HelveticaNeue-Medium', sans-serif;
+  margin-right: 10px;
+  font-size: 14px;
+}
+.gh-table-medium td a:hover,
+.gh-table-medium td a:focus {
+  text-decoration: underline;
 }
 .gh-table-medium tr {
-  border: 1px solid #979797;
+  border-right: 1px solid #979797;
+  border-left: 1px solid #979797;
+}
+.gh-table-medium tbody tr:nth-child(even) {
+  background-color: #f4f4f4;
 }
 .gh-table-medium th {
   background: var(--gh-primary);
+  font-family: 'HelveticaNeue-Medium', sans-serif;
+
   text-align: left;
   color: #fff;
   font-weight: 500;
   font-size: 18px;
   padding: 11px 20px;
-  border-bottom: 1px solid #979797;
+
   position: relative;
 }
 .gh-table {
@@ -1419,4 +1442,60 @@ input[type='checkbox'] {
   max-width: 200px;
   word-break: break-word;
   cursor: default;
+}
+
+.gh-summary-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-family: 'HelveticaNeue-Roman', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  justify-content: space-between;
+}
+
+.gh-summary-item {
+  min-width: 180px;
+  margin-bottom: 0.5rem;
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.gh-summary-item > strong,
+.gh-font-helvetica-neue-medium {
+  font-family: 'HelveticaNeue-Medium', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  text-decoration: none;
+}
+.gh-font-helvetica-neue-medium:hover {
+  text-decoration: none;
+  color: #003e6b;
+}
+.gh-summary-help {
+  font-size: 0.95rem;
+  color: #333; /* Tailwind gray-500 */
+  font-family: 'HelveticaNeue-Medium', sans-serif;
+  font-weight: 500;
+  margin-bottom: 16px;
+  letter-spacing: -0.1px;
+}
+.gh-summary-help a {
+  color: #2563eb; /* Tailwind blue-600 */
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.gh-section-header {
+  display: flex;
+  align-items: center;
+}
+.gh-section-header-between {
+  justify-content: space-between;
 }

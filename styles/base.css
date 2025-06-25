@@ -163,7 +163,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 48px 0 63px;
+  padding: 48px 0 52px;
   max-width: 1248px;
   margin: 0 auto;
 }
@@ -198,7 +198,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 33px;
+  gap: 26px;
   justify-content: flex-start;
 }
 .gh-header-title {
@@ -232,6 +232,9 @@ body {
   width: 100%;
 }
 .gh-main-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 2.6rem;
   font-weight: 400;
   margin-bottom: 0.5rem;
@@ -592,8 +595,8 @@ td.gh-table-availability {
 }
 .gh-stepper {
   width: 100%;
-  max-width: 1200px;
-  margin: 40px auto 26px;
+  /* max-width: 1200px; */
+  margin: 20px auto 27px;
   margin-left: 0;
 }
 .gh-stepper ul {
@@ -716,7 +719,7 @@ input[type='radio'] {
 .gh-form-title {
   font-size: 19px;
   font-weight: 700;
-  /* margin-bottom: 13px; */
+  margin-bottom: 13px;
   color: #333;
   font-family: 'HelveticaNeue-Bold', sans-serif;
 }
@@ -1195,7 +1198,6 @@ input[type='checkbox'] {
 }
 .gh-form-title-left {
   text-align: left;
-  margin-bottom: 0;
 }
 .gh-form-section-mb {
   margin-bottom: 24px;

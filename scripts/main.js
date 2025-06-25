@@ -111,11 +111,26 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
     customSelect.setAttribute('aria-expanded', 'true');
     options.hidden = false;
     isOpen = true;
+    // Add event listeners for outside click and Escape only when open
+    document.addEventListener('mousedown', handleOutsideClick);
+    document.addEventListener('keydown', handleEscape);
   }
   function closeDropdown() {
     customSelect.setAttribute('aria-expanded', 'false');
     options.hidden = true;
     isOpen = false;
+    document.removeEventListener('mousedown', handleOutsideClick);
+    document.removeEventListener('keydown', handleEscape);
+  }
+  function handleOutsideClick(e) {
+    if (!customSelect.contains(e.target)) {
+      closeDropdown();
+    }
+  }
+  function handleEscape(e) {
+    if (isOpen && e.key === 'Escape') {
+      closeDropdown();
+    }
   }
 
   trigger.addEventListener('click', function (e) {
@@ -288,6 +303,41 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
       }
     }
     let expandedAttendeeIndex = null;
+    const optionElements = Array.from(
+      options.querySelectorAll('.gh-select-option')
+    );
+    let focusedOptionIndex = -1;
+
+    function focusOption(index) {
+      if (optionElements.length === 0) {
+        return;
+      }
+      if (index < 0) {
+        index = 0;
+      }
+      if (index >= optionElements.length) {
+        index = optionElements.length - 1;
+      }
+      optionElements.forEach((opt, i) => {
+        if (i === index) {
+          opt.classList.add('gh-option-focused');
+          opt.setAttribute('tabindex', '0');
+          opt.focus();
+        } else {
+          opt.classList.remove('gh-option-focused');
+          opt.setAttribute('tabindex', '-1');
+        }
+      });
+      focusedOptionIndex = index;
+    }
+    function clearOptionFocus() {
+      optionElements.forEach((opt) => {
+        opt.classList.remove('gh-option-focused');
+        opt.setAttribute('tabindex', '-1');
+      });
+      focusedOptionIndex = -1;
+    }
+
     options.addEventListener('click', function (e) {
       const option = e.target.closest('.gh-select-option');
       if (option) {
@@ -310,6 +360,87 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
         }
         renderSelectedRepAttendees(options);
         e.stopPropagation();
+        // Do NOT close dropdown on option click for multi-select
+      }
+    });
+
+    // Keyboard navigation for options
+    options.addEventListener('keydown', function (e) {
+      if (!isOpen) {
+        return;
+      }
+      if (['ArrowDown', 'Down'].includes(e.key)) {
+        e.preventDefault();
+        focusOption(
+          focusedOptionIndex < optionElements.length - 1
+            ? focusedOptionIndex + 1
+            : 0
+        );
+      } else if (['ArrowUp', 'Up'].includes(e.key)) {
+        e.preventDefault();
+        focusOption(
+          focusedOptionIndex > 0
+            ? focusedOptionIndex - 1
+            : optionElements.length - 1
+        );
+      } else if (e.key === 'Tab') {
+        e.preventDefault();
+        if (e.shiftKey) {
+          focusOption(
+            focusedOptionIndex > 0
+              ? focusedOptionIndex - 1
+              : optionElements.length - 1
+          );
+        } else {
+          focusOption(
+            focusedOptionIndex < optionElements.length - 1
+              ? focusedOptionIndex + 1
+              : 0
+          );
+        }
+      } else if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        if (focusedOptionIndex >= 0) {
+          const opt = optionElements[focusedOptionIndex];
+          const checkbox = opt.querySelector('.gh-checkbox');
+          checkbox.checked = !checkbox.checked;
+          updateRepNoneLogic(customSelect, options);
+          // Update trigger text
+          const selectedLabels = Array.from(
+            options.querySelectorAll('.gh-checkbox:checked')
+          ).map((cb) =>
+            cb.parentElement.querySelector('.gh-option-bold').textContent.trim()
+          );
+          valueSpan.textContent =
+            selectedLabels.length > 0
+              ? selectedLabels.join(', ')
+              : 'Select attendee name(s)';
+          if (typeof renderSelectedAttendees === 'function') {
+            expandedAttendeeIndex = null;
+            renderSelectedAttendees(expandedAttendeeIndex);
+          }
+          renderSelectedRepAttendees(options);
+        }
+      }
+    });
+
+    // When dropdown opens, focus first option
+    trigger.addEventListener('keydown', function (e) {
+      if ((e.key === 'Enter' || e.key === ' ') && !isOpen) {
+        setTimeout(() => focusOption(0), 0);
+      }
+    });
+    trigger.addEventListener('click', function () {
+      if (!isOpen) {
+        setTimeout(() => focusOption(0), 0);
+      } else {
+        clearOptionFocus();
+      }
+    });
+    // Remove focus when dropdown closes
+    customSelect.addEventListener('keydown', function (e) {
+      if (isOpen && e.key === 'Escape') {
+        clearOptionFocus();
       }
     });
     // Initial state
@@ -344,12 +475,8 @@ document.querySelectorAll('.gh-custom-select').forEach(function (customSelect) {
     }
   });
 
-  // Close on outside click
-  document.addEventListener('click', function (e) {
-    if (!customSelect.contains(e.target)) {
-      closeDropdown();
-    }
-  });
+  // Remove old global document click handler for this dropdown
+  // (handled by openDropdown/closeDropdown now)
 });
 
 // Additional Info Toggle
@@ -456,3 +583,80 @@ if (document.readyState === 'loading') {
 } else {
   setupDrivingFieldsToggle();
 }
+
+// Tooltip.js - Simple, accessible tooltip for any element with .js-tooltip
+(function () {
+  function createTooltipEl(text) {
+    const tooltip = document.createElement('div');
+    tooltip.className = 'gh-tooltip';
+    tooltip.setAttribute('role', 'tooltip');
+    tooltip.textContent = text;
+    document.body.appendChild(tooltip);
+    return tooltip;
+  }
+
+  function positionTooltip(el, tooltip) {
+    const rect = el.getBoundingClientRect();
+    const scrollY = window.scrollY || window.pageYOffset;
+    const scrollX = window.scrollX || window.pageXOffset;
+    let top = rect.bottom + scrollY + 8;
+    let left = rect.left + scrollX + rect.width / 2 - tooltip.offsetWidth / 2;
+
+    // Prevent overflow
+    if (left < 8) left = 8;
+    if (left + tooltip.offsetWidth > window.innerWidth - 8) {
+      left = window.innerWidth - tooltip.offsetWidth - 8;
+    }
+    if (top + tooltip.offsetHeight > window.innerHeight + scrollY) {
+      top = rect.top + scrollY - tooltip.offsetHeight - 8;
+    }
+
+    tooltip.style.top = `${top}px`;
+    tooltip.style.left = `${left}px`;
+  }
+
+  function showTooltip(e) {
+    const el = e.currentTarget;
+    const text = el.getAttribute('data-tooltip') || el.getAttribute('title');
+    if (!text) return;
+    el.setAttribute('aria-describedby', 'gh-tooltip');
+    el.setAttribute('data-tooltip', text);
+    el.removeAttribute('title');
+    const tooltip = createTooltipEl(text);
+    tooltip.id = 'gh-tooltip';
+    positionTooltip(el, tooltip);
+    el._tooltip = tooltip;
+  }
+
+  function hideTooltip(e) {
+    const el = e.currentTarget;
+    el.removeAttribute('aria-describedby');
+    if (el._tooltip) {
+      el._tooltip.remove();
+      el._tooltip = null;
+    }
+  }
+
+  function handleTouch(e) {
+    e.preventDefault();
+    const el = e.currentTarget;
+    if (el._tooltip) {
+      hideTooltip(e);
+    } else {
+      showTooltip(e);
+      // Hide after 2s or on next touch
+      setTimeout(() => hideTooltip({ currentTarget: el }), 2000);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const tooltips = document.querySelectorAll('.js-tooltip');
+    tooltips.forEach((el) => {
+      el.addEventListener('mouseenter', showTooltip);
+      el.addEventListener('mouseleave', hideTooltip);
+      el.addEventListener('focus', showTooltip);
+      el.addEventListener('blur', hideTooltip);
+      el.addEventListener('touchstart', handleTouch, { passive: false });
+    });
+  });
+})();

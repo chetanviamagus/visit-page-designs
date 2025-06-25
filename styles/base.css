@@ -152,8 +152,8 @@ body {
 .absolute {
   position: absolute;
 }
-.b-40 {
-  bottom: 40px;
+.b-30 {
+  bottom: 30px;
 }
 .gh-header {
   background: #fff;
@@ -163,8 +163,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 48px 0 36px;
-  max-width: 1246px;
+  padding: 48px 0 63px;
+  max-width: 1248px;
   margin: 0 auto;
 }
 .gh-header-left {
@@ -172,8 +172,9 @@ body {
   align-items: center;
 }
 .gh-logo {
-  height: 56px;
+  height: 70px;
   margin-right: 1rem;
+  margin-top: 20px;
 }
 .gh-logo-text {
   display: flex;
@@ -197,34 +198,36 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.5rem;
+  gap: 33px;
   justify-content: flex-start;
 }
 .gh-header-title {
   font-size: 38px;
-  font-weight: 600;
   color: #57585a;
   font-family: 'HelveticaNeue-Medium', sans-serif;
 }
 .gh-user-info {
   display: flex;
   align-items: center;
-  font-size: 12px;
   color: #57585a;
-  gap: 8px;
+  gap: 5px;
+}
+.gh-user-info-text {
+  font-size: 12px;
+  font-family: 'HelveticaNeue-Roman', sans-serif;
+  letter-spacing: 0.7px;
+  padding-top: 4px;
 }
 .gh-user-info .material-symbols-outlined {
-  font-size: 16px;
+  font-size: 24px;
   vertical-align: middle;
 }
-
 .gh-main {
   flex: 1;
   display: flex;
   flex-direction: column;
-
-  padding: 24px 0;
-  max-width: 1246px;
+  padding: 0 0 24px 0;
+  max-width: 1248px;
   margin: 0 auto;
   width: 100%;
 }
@@ -244,30 +247,32 @@ body {
   color: #57585a;
   font-family: 'HelveticaNeue-Medium', sans-serif;
 }
+
 .gh-main-desc {
   font-size: 22px;
   color: #57585a;
-  margin: 10px 0 32px 0;
+  margin: 15px 0 32px 0;
   text-align: left;
   font-family: 'HelveticaNeue-Medium', sans-serif;
 }
 .gh-cards {
   display: flex;
-  gap: 2rem;
+  gap: 30px;
   width: 100%;
-  margin-bottom: 48px;
+  margin-bottom: 59px;
 }
 .gh-card {
   position: relative;
-  padding: 40px 40px 84px 40px;
+  padding: 47px 40px 74px 41px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   flex: 1;
 }
 .gh-card h3 {
-  margin: 0 0 20px 0;
+  margin: 0 0 21px 0;
   font-size: 24px;
+  letter-spacing: 0.9px;
 }
 .gh-card-primary {
   background: var(--gh-primary);
@@ -285,11 +290,11 @@ body {
 }
 .gh-card p {
   font-size: 18px;
-  margin: 0 0 28px 0;
+  margin: 0 0 30px 0;
   font-family: 'HelveticaNeue-Medium', sans-serif;
 }
 .gh-btn {
-  padding: 0.7rem 2rem;
+  padding: 12px 29px 9px 30px;
   font-size: 1.1rem;
   border-radius: 2rem;
   border: 2px solid #fff;
@@ -573,7 +578,6 @@ td.gh-table-availability {
   color: var(--gh-primary);
   border: 1px solid var(--gh-primary);
   font-weight: 500;
-  padding: 10px 30px;
   font-size: 18px;
 }
 .gh-btn-outline:hover,

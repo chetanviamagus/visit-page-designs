@@ -242,6 +242,10 @@ body {
   font-family: 'HelveticaNeue-Medium', sans-serif;
   color: #444;
 }
+.gh-table-regular-font {
+  font-size: 18px;
+  font-family: 'HelveticaNeue-Roman', sans-serif;
+}
 .gh-main-section-title {
   font-size: 36px;
   font-weight: 600;
@@ -431,11 +435,26 @@ body {
 .gh-table {
   width: 100%;
   border-collapse: collapse;
-  font-family: 'HelveticaNeue-Medium', sans-serif;
+  font-family: 'HelveticaNeue-Bold', sans-serif;
   background: #fff;
 }
+.gh-table thead tr {
+  border: 1px solid #075697;
+}
+.gh-table-header-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.icon-help {
+  margin-top: -7px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .gh-table td {
-  padding: 30px 20px;
+  padding: 20px 20px 28px 20px;
   text-align: left;
   font-size: 20px;
   border-bottom: 1px solid #979797;
@@ -451,8 +470,8 @@ body {
   color: #fff;
   font-weight: 500;
   font-size: 18px;
-  padding: 11px 20px;
-  border-bottom: 2px solid #e5e7eb;
+  padding: 14px 20px 10px 19px;
+  border-bottom: 1px solid #979797;
   position: relative;
 }
 

@@ -144,7 +144,7 @@ body {
   color: #969696 !important;
 }
 .material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
 }
 .hidden {
   display: none !important;
@@ -225,7 +225,7 @@ body {
   padding-top: 4px;
 }
 .gh-user-info .material-symbols-outlined {
-  font-size: 24px;
+  font-size: 20px;
   vertical-align: middle;
 }
 .gh-main {
@@ -425,7 +425,7 @@ body {
 }
 .gh-table-medium td {
   vertical-align: baseline;
-  padding: 11px 20px 9px 20px;
+  padding: 7px 20px 5px 20px;
   text-align: left;
   font-size: 15px;
   color: #333;
@@ -1448,7 +1448,9 @@ input[type='checkbox'] {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(151, 151, 151, 1);
   font-family: 'HelveticaNeue-Roman', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -1456,9 +1458,8 @@ input[type='checkbox'] {
 }
 
 .gh-summary-item {
-  min-width: 180px;
   margin-bottom: 0.5rem;
-  flex: 1 1 200px;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1498,4 +1499,7 @@ input[type='checkbox'] {
 }
 .gh-section-header-between {
   justify-content: space-between;
+}
+.gh-text-center {
+  align-self: center;
 }

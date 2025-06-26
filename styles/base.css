@@ -252,22 +252,23 @@ body {
   font-size: 18px !important;
   font-family: 'HelveticaNeue-Roman', sans-serif;
 }
-.gh-main-section-title {
+.gh-page-title {
   font-size: 36px;
-  margin: 0;
+  margin: 0 0 15px 0;
   text-align: left;
   color: #57585a;
   font-family: 'HelveticaNeue-Medium', sans-serif;
   font-weight: 500;
 }
 
-.gh-main-desc {
+.gh-title-desc {
   font-size: 22px;
   color: #57585a;
-  margin: 15px 0 32px 0;
   text-align: left;
   font-family: 'HelveticaNeue-Medium', sans-serif;
   font-weight: 500;
+  padding: 0;
+  margin: 0;
 }
 .gh-cards {
   display: flex;
@@ -384,7 +385,7 @@ body {
     align-items: flex-start;
   }
   .gh-main-title,
-  .gh-main-desc {
+  .gh-title-desc {
     font-size: 1.1rem;
   }
   .gh-cards {
@@ -405,7 +406,7 @@ body {
 }
 .gh-table-container {
   width: 100%;
-  margin: 0 auto 42px auto;
+  margin: 33px auto 42px auto;
   background: #fff;
   overflow-x: auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
@@ -602,7 +603,7 @@ td.gh-table-availability {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin: 18px auto 0 auto;
+  margin: 40px auto 0 auto;
 }
 .gh-btn-large {
   padding: 10px 30px;
@@ -840,7 +841,7 @@ input[type='radio'] {
 }
 .gh-input,
 .gh-textarea {
-  padding: 10px 20px;
+  padding: 11px 13px 9px 13px;
   font-size: 16px;
   border: 1px solid #333;
   border-radius: 4px;

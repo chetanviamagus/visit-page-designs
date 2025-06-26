@@ -16,7 +16,7 @@
   <header class="gh-header">
     <div class="gh-header-container">
       <div class="gh-header-left">
-        <img src="Greenheck_Logo_Horiz_Blue@2x.png" alt="Greenheck Logo" class="gh-logo" />
+        <img width="285" height="70" src="Greenheck_Logo_Horiz_Blue@2x.png" alt="Greenheck Logo" class="gh-logo" />
       </div>
       <div class="gh-header-right">
         <div class="gh-user-info">
@@ -40,8 +40,8 @@
     </nav>
     <section class="gh-form-section">
       <h2 class="gh-form-title">Select Customer Account</h2>
-      <label class="gh-label">Select customer account</label>
-      <div class="gh-custom-select" tabindex="0" aria-haspopup="listbox" aria-expanded="false">
+      <label for="customer-account-select" class="gh-label">Select customer account</label>
+      <div class="gh-custom-select" id="customer-account-select" tabindex="0" aria-haspopup="listbox" aria-expanded="false">
         <button class="gh-select-trigger" aria-label="Select customer account" type="button">
           <span class="gh-select-value">Select</span>
           <span class="material-symbols-outlined">expand_more</span>
@@ -89,7 +89,7 @@
             <textarea id="project-focus" class="gh-textarea" maxlength="250" placeholder="Type here..."></textarea>
           </div>
           <div class="gh-label-group">
-            <label class="gh-label">Select areas of interest</label>
+            <label class="gh-label" for="areas-interest-select">Select areas of interest</label>
             <div class="gh-custom-select" id="areas-interest-select" tabindex="0" aria-haspopup="listbox" aria-expanded="false">
               <button class="gh-select-trigger" aria-label="Select areas of interest" type="button">
                 <span class="gh-select-value">Select</span>

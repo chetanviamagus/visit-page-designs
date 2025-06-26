@@ -1331,7 +1331,7 @@ input[type='checkbox'] {
   color: #075697;
 }
 .gh-mb-2-5 {
-  margin-bottom: 8px;
+  margin-bottom: 28px;
 }
 .gh-mb-2-5-top {
   margin: 2.5rem 0 0 0;
@@ -1450,7 +1450,7 @@ input[type='checkbox'] {
   gap: 0.5rem;
   margin-bottom: 2px;
   padding-bottom: 24px;
-  border-bottom: 1px solid rgba(151, 151, 151, 1);
+
   font-family: 'HelveticaNeue-Roman', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -1496,9 +1496,12 @@ input[type='checkbox'] {
 .gh-section-header {
   display: flex;
   align-items: center;
+  border-top: 1px solid rgba(151, 151, 151, 1);
 }
 .gh-section-header-between {
   justify-content: space-between;
+  border-top: 1px solid rgba(151, 151, 151, 1);
+  padding-top: 15px;
 }
 .gh-text-center {
   align-self: center;

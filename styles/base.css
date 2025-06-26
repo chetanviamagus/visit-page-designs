@@ -1468,12 +1468,15 @@ input[type='checkbox'] {
 
 .gh-summary-item > strong,
 .gh-font-helvetica-neue-medium {
-  font-family: 'HelveticaNeue-Medium', 'Helvetica Neue', Helvetica, Arial,
-    sans-serif;
+  font-family: 'HelveticaNeue-Medium', sans-serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 0.6px;
   text-decoration: none;
+}
+.gh-font-helvetica-neue-medium {
+  font-family: 'HelveticaNeue-Medium', sans-serif;
+  font-weight: 500;
 }
 .gh-font-helvetica-neue-medium:hover {
   text-decoration: none;
@@ -1488,9 +1491,12 @@ input[type='checkbox'] {
   letter-spacing: -0.1px;
 }
 .gh-summary-help a {
-  color: #2563eb; /* Tailwind blue-600 */
-  text-decoration: underline;
+  color: #075697; /* Tailwind blue-600 */
+  text-decoration: none;
   font-weight: 500;
+}
+.gh-summary-help a:hover {
+  text-decoration: underline;
 }
 
 .gh-section-header {

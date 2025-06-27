@@ -254,10 +254,8 @@ button:focus {
 .gh-main-title {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   font-size: 2.6rem;
   font-weight: 400;
-  margin-bottom: 0.5rem;
   text-align: left;
   font-family: 'HelveticaNeue-Medium', sans-serif;
   color: #444;
